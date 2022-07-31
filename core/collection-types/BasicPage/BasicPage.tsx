@@ -1,5 +1,5 @@
 import React from 'react'
-import Blocks, { IBlocks } from './Blocks';
+import Blocks, { IBlocks } from './components/Blocks';
 
 export interface IBasicPage {
   Title: string,

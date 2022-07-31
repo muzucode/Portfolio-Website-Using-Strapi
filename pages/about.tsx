@@ -9,53 +9,26 @@ const About: NextPage = (data: any) => {
   const pageData = data['pageData'];
   // console.log(pageData)
 
-  const BlockProps: IBlock = {
-    BlockContainer: {
-      style: {
-        backgroundColor: '#fff',
-        fontColor: '#fff',
-        border: '1px solid red'
-      },
-      data: {
-        body: ''
-      }
-    },
-    LinkButton: {
-      style: {
-        backgroundColor: '#fff',
-        fontColor: '#000',
-        border: '1px solid #000',
-      },
-      data: {
-        title: 'Request a Quote',
-        subtitle: '',
-        link: 'https://www.google.com'
-      }
-    },
-    BlockTitle: {
-      style: {
-        color: 'red',
-        fontSize: '14px'
-      },
-      data: {
-        title: 'Test description'
-      }
-    },
-    BlockDescription: {
-      style: {
-        color: '#000',
-        fontSize: '30px'
-      },
-      data: {
-        description: 'Lorem ipsum',
-      }
-    }
-  }
-
   return (
     <BasicPage {...pageData}/>
   );
 }
+
+
+
+export async function getServerSideProps() {
+
+  let res = await ax.get('/basic-pages/1?populate=deep');
+  let pageData = await res.data['data']['attributes'];
+
+  // console.log(await pageData);
+
+  return {
+    props: {pageData}, // will be passed to the page component as props
+  }
+}
+
+
 
 const Container = styled.div`
   width: 100%;
@@ -88,19 +61,6 @@ const HeroImage = styled.img`
   border-style: none;
   border: none;
 `
-
-
-export async function getServerSideProps() {
-
-  let res = await ax.get('/basic-pages/1?populate[Blocks][populate]=*');
-  let pageData = await res.data['data']['attributes'];
-
-  // console.log(await pageData);
-
-  return {
-    props: {pageData}, // will be passed to the page component as props
-  }
-}
 
 
 

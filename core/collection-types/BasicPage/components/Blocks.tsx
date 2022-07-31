@@ -1,5 +1,5 @@
 import React from 'react'
-import { Block, IBlock } from '../../shared/Block/Block'
+import { Block, IBlock } from '../../../shared/Block/Block'
 
 
 export interface IBlocks {
