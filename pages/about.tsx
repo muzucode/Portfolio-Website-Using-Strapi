@@ -7,7 +7,6 @@ import { ax } from "../services/http/axios";
 const About: NextPage = (data: any) => {
 
   const pageData = data['pageData'];
-  // console.log(pageData)
 
   return (
     <BasicPage {...pageData}/>
