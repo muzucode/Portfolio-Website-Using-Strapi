@@ -1,11 +1,13 @@
 import { NextPage } from "next";
 import styled from "styled-components";
-import { Block, IBlock } from "../components/composite/Block";
-import { PersistentDrawer } from "../modules/materialui.module";
+import BasicPage from "../core/collection-types/BasicPage/BasicPage";
+import { Block, IBlock } from "../core/shared/Block/Block";
+import { ax } from "../services/http/axios";
 
+const About: NextPage = (data: any) => {
 
-const About: NextPage = () => {
-
+  const pageData = data['pageData'];
+  // console.log(pageData)
 
   const BlockProps: IBlock = {
     BlockContainer: {
@@ -51,17 +53,7 @@ const About: NextPage = () => {
   }
 
   return (
-    <Container>
-      <MenuBar>
-        <Brand>Ultra Name</Brand>
-      </MenuBar>
-
-      <HeroImage></HeroImage>
-
-      <Block {...BlockProps}></Block>
-
-
-    </Container>
+    <BasicPage {...pageData}/>
   );
 }
 
@@ -98,28 +90,18 @@ const HeroImage = styled.img`
 `
 
 
+export async function getServerSideProps() {
 
+  let res = await ax.get('/basic-pages/1?populate[Blocks][populate]=*');
+  let pageData = await res.data['data']['attributes'];
 
+  // console.log(await pageData);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export async function getServerSideProps(context: any) {
   return {
-    props: {}, // will be passed to the page component as props
+    props: {pageData}, // will be passed to the page component as props
   }
 }
+
+
 
 export default About
