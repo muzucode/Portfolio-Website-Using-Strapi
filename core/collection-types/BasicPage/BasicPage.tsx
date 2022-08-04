@@ -1,4 +1,5 @@
 import React from 'react'
+import Layout, { ILayout } from '../../shared/Layout/Layout';
 import Region, { IRegion } from '../../shared/Region/Region';
 import Blocks, { IBlocks } from './components/Blocks';
 import Body from './components/Body';
@@ -15,7 +16,7 @@ export interface IBasicPage {
 
 export default function BasicPage(props: IBasicPage) {
   
-  // Define regions
+  // Regions
   const Header: IRegion = {
     title: 'header',
     children: (
@@ -38,13 +39,28 @@ export default function BasicPage(props: IBasicPage) {
       <></>
     )
   }
+  
+  // Layouts
+  const LayoutStandard: ILayout = {
+    title: 'alpha',
+    regions: (
+      <>
+        <Region {...Header}/>
+        <Region {...Content}/>
+        <Region {...Footer}/>
+      </>
+    )
+  }
+  const LayoutNone: ILayout = {
+    title: 'alpha',
+    regions: (
+      <>
+      </>
+    )
+  }
 
 
   return (
-    <>
-      <Region {...Header}/>
-      <Region {...Content}/>
-      <Region {...Footer}/>
-    </>
+    <Layout {...LayoutStandard}/>
   )
 }
