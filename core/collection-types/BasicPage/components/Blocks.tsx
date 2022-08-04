@@ -10,12 +10,12 @@ export interface IBlocks {
 export default function Blocks(props: IBlocks) {
   console.log('Printing blocks...')
   return (
-    <>
+    <div className='blocks'>
       {
         props.Block.map(block => (
           <Block {...block} key={block.id}></Block>
         ))
       }
-    </>
+    </div>
   )
 }

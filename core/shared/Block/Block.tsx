@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link, { ILink } from '../Link/Link'
-import BlockContainer, { IBlockContainer } from './components/BlockContainer'
-import BlockDescription, { IBlockDescription } from './components/BlockDescription'
-import BlockTitle, { IBlockTitle } from './components/BlockTitle'
+import { cn } from '../../utility/TagsParser'
 
 
 export interface IBlock {
@@ -19,17 +17,11 @@ export function Block(props: IBlock) {
 
   return (
 
-    <Container backgroundColor={props.BackgroundColor} fontColor={props.FontColor}>
+    <Container className={cn(props.Title)} backgroundColor={props.BackgroundColor} fontColor={props.FontColor}>
       <h2>{props.Title}</h2>
       <p>{props.Description}</p>
       <Link {...props.Link}></Link>
     </Container>
-
-    // <BlockContainer {...props.BlockContainer}>
-    //   <BlockTitle {...props.BlockTitle}></BlockTitle>
-    //   <BlockDescription {...props.BlockDescription}></BlockDescription>
-      
-    // </BlockContainer>
   )
 }
 
