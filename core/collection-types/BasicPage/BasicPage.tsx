@@ -1,39 +1,36 @@
 import React from 'react'
 import Layout, { ILayout } from '../../shared/Layout/Layout';
 import Region, { IRegion } from '../../shared/Region/Region';
-import Blocks, { IBlocks } from './components/Blocks';
+import Header from '../../single-types/Header';
+import Blocks from './components/Blocks';
 import Body from './components/Body';
 import Title from './components/Title';
-
-export interface IBasicPage {
-  Title: string,
-  Body: string,
-  Blocks: IBlocks,
-  createdAt: string,
-  publishedAt: string,
-  updatedAt: string
-}
+import { IBasicPage } from './IBasicPage';
 
 export default function BasicPage(props: IBasicPage) {
   
+  console.log(props);
+
   // Regions
-  const Header: IRegion = {
+  const RegionHeader: IRegion = {
     title: 'header',
     children: (
-      <>This is my header</>
-    )
-  }
-  const Content: IRegion = {
-    title: 'content',
-    children: (
       <>
-        <Title content={props.Title}/>
-        <Body content={props.Body}/>
-        <Blocks {...props.Blocks}/>
+        <Header {...props.headerData}></Header>
       </>
     )
   }
-  const Footer: IRegion = {
+  const RegionContent: IRegion = {
+    title: 'content',
+    children: (
+      <>
+        <Title content={props.pageData.Title}/>
+        <Body content={props.pageData.Body}/>
+        <Blocks {...props.pageData.Blocks}/>
+      </>
+    )
+  }
+  const RegionFooter: IRegion = {
     title: 'footer',
     children: (
       <></>
@@ -45,9 +42,9 @@ export default function BasicPage(props: IBasicPage) {
     title: 'alpha',
     regions: (
       <>
-        <Region {...Header}/>
-        <Region {...Content}/>
-        <Region {...Footer}/>
+        <Region {...RegionHeader}/>
+        <Region {...RegionContent}/>
+        <Region {...RegionFooter}/>
       </>
     )
   }
