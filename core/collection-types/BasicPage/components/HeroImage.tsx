@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { C } from '../../../shared/StyledComponents/StyledComponents';
 import { IImage } from '../../../strapi-interfaces/Image/IImage'
 
 
@@ -9,15 +10,14 @@ interface IHeroImage {
 export default function HeroImage(props: IHeroImage) {
   const data = props.content.data.attributes;
   return (
-    <Container backgroundImage={`url(http://localhost:3030${data.url})`}>
-    </Container>
+    <Container className='hero-image' backgroundImage={`url(http://localhost:3030${data.url})`}/>
   )
 }
 
 interface IContainer {
   backgroundImage: string
 }
-const Container = styled.div<IContainer>`
+const Container = styled(C)<IContainer>`
   width: 100%;
   height: 300px;
   background-image: ${p => p.backgroundImage};

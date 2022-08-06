@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import styled from "styled-components";
-import BasicPage from "../core/collection-types/BasicPage/module/BasicPage";
+import BasicPage from "../core/collection-types/BasicPage/module/BasicPage.module";
 import { Block, IBlock } from "../core/shared/Block/Block";
 import { ax } from "../services/http/axios";
 

@@ -10,8 +10,6 @@ import { IBasicPage } from '../interfaces/IBasicPage';
 
 export default function BasicPage(props: IBasicPage) {
   
-  console.log(props);
-
   // Regions
   const RegionHeader: IRegion = {
     title: 'header',
@@ -21,11 +19,18 @@ export default function BasicPage(props: IBasicPage) {
       </>
     )
   }
+  const RegionHero: IRegion = {
+    title: 'hero',
+    children: (
+      <>
+        <HeroImage content={props.pageData.heroImage}></HeroImage>
+      </>
+    )
+  }
   const RegionContent: IRegion = {
     title: 'content',
     children: (
       <>
-        <HeroImage content={props.pageData.heroImage}></HeroImage>
         <Title content={props.pageData.Title}/>
         <Body content={props.pageData.Body}/>
         <Blocks {...props.pageData.Blocks}/>
@@ -45,15 +50,9 @@ export default function BasicPage(props: IBasicPage) {
     regions: (
       <>
         <Region {...RegionHeader}/>
+        <Region {...RegionHero}/>
         <Region {...RegionContent}/>
         <Region {...RegionFooter}/>
-      </>
-    )
-  }
-  const LayoutNone: ILayout = {
-    title: 'alpha',
-    regions: (
-      <>
       </>
     )
   }

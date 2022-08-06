@@ -1,5 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Block, IBlock } from '../../../shared/Block/Block'
+import { C } from '../../../shared/StyledComponents/StyledComponents'
 
 
 export interface IBlocks {
@@ -10,12 +12,16 @@ export interface IBlocks {
 export default function Blocks(props: IBlocks) {
   console.log('Printing blocks...')
   return (
-    <div className='blocks'>
+    <Container className='blocks'>
       {
         props.Block.map(block => (
           <Block {...block} key={block.id}></Block>
         ))
       }
-    </div>
+    </Container>
   )
 }
+
+const Container = styled(C)`
+
+`

@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn } from '../../utility/TagsParser'
+import { skewer } from '../../utility/TagsParser'
 
 export interface ILayout {
   title: string,
@@ -8,7 +8,7 @@ export interface ILayout {
 
 export default function Layout(props: ILayout) {
   return (
-    <div className={cn('layout-' + props.title)}>
+    <div className={skewer('layout-' + props.title)}>
       {props.regions}
     </div>
   )

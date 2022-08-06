@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link, { ILink } from '../Link/Link'
-import { cn } from '../../utility/TagsParser'
+import { skewer } from '../../utility/TagsParser'
 
 
 export interface IBlock {
@@ -17,7 +17,7 @@ export function Block(props: IBlock) {
 
   return (
 
-    <Container className={cn(props.Title)} backgroundColor={props.BackgroundColor} fontColor={props.FontColor}>
+    <Container className={skewer(props.Title)} backgroundColor={props.BackgroundColor} fontColor={props.FontColor}>
       <h2>{props.Title}</h2>
       <p>{props.Description}</p>
       <Link {...props.Link}></Link>
