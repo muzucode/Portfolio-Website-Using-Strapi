@@ -6,8 +6,10 @@ export interface IRegion {
 }
 export default function Region(props: IRegion) {
   return (
-    <div className={"region__" + props.title}>
-      {props.children}
+    <div className={"region region__" + props.title}>
+      <div className="content">
+        {props.children}
+      </div>
     </div>
   )
 }

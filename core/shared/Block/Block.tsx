@@ -17,7 +17,7 @@ export function Block(props: IBlock) {
 
   return (
 
-    <Container className={skewer(props.Title)} backgroundColor={props.BackgroundColor} fontColor={props.FontColor}>
+    <Container className={`block block__${skewer(props.Title)}`} backgroundColor={props.BackgroundColor} fontColor={props.FontColor}>
       <h2>{props.Title}</h2>
       <p>{props.Description}</p>
       <Link {...props.Link}></Link>
@@ -34,7 +34,7 @@ const Container = styled.div<IContainer>`
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: ${props => {
     return props.backgroundColor
   }};

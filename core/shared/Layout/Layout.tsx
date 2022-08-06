@@ -8,7 +8,7 @@ export interface ILayout {
 
 export default function Layout(props: ILayout) {
   return (
-    <div className={skewer('layout-' + props.title)}>
+    <div className={skewer('layout__' + props.title)}>
       {props.regions}
     </div>
   )

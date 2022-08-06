@@ -8,22 +8,40 @@ export const C = styled.div`
   width: 100%;
   height: 100%;
 `
-export const CF = styled(C)`
+export const CF = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
 `
-export const CFC = styled(CF)`
+export const CFC = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
   display: flex;
   flex-direction: column;
 `
-export const CFR = styled(CF)`
+export const CFR = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
   display: flex;
   flex-direction: row;
 `
-export const CFCC = styled(CFC)`
+export const CFCC = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `
-export const CFRC = styled(CFR)`
+export const CFRC = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 `

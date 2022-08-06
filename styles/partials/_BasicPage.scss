@@ -1,5 +1,54 @@
-.region {
-  &__content {
-    border: 2px solid yellow;
+// Layout
+.layout {
+
+  &__alpha {
+
+    // Regions
+    .region {
+
+      &__header {
+
+      }
+      &__hero {
+
+      }
+      &__content {
+        .content {
+          // padding: 0px 40px;
+
+          .title {
+            padding: 0px 32 px;
+
+            h2 {
+              font-size: 50px;
+              margin: 10px;
+            }
+  
+          }
+          .body {
+            padding: 0px 40px;
+          }
+          .blocks {
+            .block {
+              padding: 20px 40px;
+              h2 {
+                margin: 0;
+              }
+              p {
+                margin: 0;
+              }
+            }
+          }
+  
+        }
+
+
+      }
+      &__footer {
+
+      }
+    }
+
   }
+
 }
