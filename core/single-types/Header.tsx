@@ -1,22 +1,47 @@
 import React from 'react'
 import styled from 'styled-components';
 import { ax } from '../../services/http/axios';
-import { IHeaderData } from '../collection-types/BasicPage/IBasicPage';
+import { IHeaderData } from '../collection-types/BasicPage/interfaces/IHeaderData';
 
 
 export default function Header(props: IHeaderData) {
+
+  const ContainerProps: IContainer = {
+    backgroundColor: props.backgroundColor,
+    fontColor: props.fontColor
+  }
   return (
-    <Container bgColor={props.Color}>{props.Title}</Container>
+    <Container 
+    className="header" 
+    {...ContainerProps}>
+      <h2>{props.title}</h2>
+    </Container>
   )
 }
 
 interface IContainer {
-  bgColor: string
+  backgroundColor: string,
+  fontColor: string,
 }
 const Container = styled.div<IContainer>`
-  height: 100px;
+  padding: 10px;
   width: 100%;
-  background-color: ${props => { return props.bgColor}};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${p => { return p.backgroundColor}};
+
+  h2 {
+    margin: 0;
+    color: ${p => { return p.fontColor}};
+  }
+`
+
+interface ITitle {
+  fontColor: string
+}
+const Title = styled.h2<ITitle>`
+  
 `
 
 export async function getServerSideProps() {
