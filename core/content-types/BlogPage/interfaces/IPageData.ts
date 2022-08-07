@@ -1,3 +1,5 @@
+import { IImage } from "../../../shared/Interfaces/Image/IImage"
+
 export interface IPageData {
   data: {
     id: number,

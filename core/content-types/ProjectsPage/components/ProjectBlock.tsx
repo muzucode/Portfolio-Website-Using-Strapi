@@ -5,37 +5,33 @@ import { skewer } from '../../../utility/TagsParser'
 import { IProjectBlock } from '../interfaces/IProjectBlock'
 
 export default function ProjectBlock(props: IProjectBlock) {
+
+  interface IBlockStyles {
+    border: string,
+    color: string,
+    backgroundColor: string,
+  }
+  const blockStyles: IBlockStyles = {
+    backgroundColor: props.backgroundColor,
+    border: `2px solid ${props.borderColor}`,
+    color: props.fontColor,
+  }
+
+  const blockFooterStyles = {
+    width: '100%',
+    height: '25px',
+    backgroundColor: props.borderColor,
+  }
+
   return (
-    <Container className={`project-block project-block__${skewer(props.title)}`}>
+    <div style={blockStyles} className={`project-block project-block__${skewer(props.title)}`}>
       <div className='content'>
         <h3>{props.project.data.attributes.title}</h3>
         <p>{props.project.data.attributes.body}</p>
       </div>
-    </Container>
+      <div style={blockFooterStyles} className='footer'>
+        <span>Stack: Next.JS (TypeScript), Strapi</span>
+      </div>
+    </div>
   )
 }
-
-const Container = styled.div`
-  /* border: 1px solid red; */
-  width: 100%;
-  height: 200px;
-  margin: 0 0 4%;
-
-  @media (min-width: 426px) {
-    width: 48%;
-  }
-
-  .content {
-    padding: 30px;
-    border: 2px solid lightgreen; 
-    height: 100%;
-    border-radius: 15px;
-    background-color: #cfffcf;
-
-    h3 {
-      margin: 0;  
-    }
-    
-  }
-
-`

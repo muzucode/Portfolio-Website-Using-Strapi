@@ -8,7 +8,7 @@ export interface IBody {
 export default function Body(props: IBody) {
   return (
     <Container className='body'>
-      {props.content}
+      <p>{props.content}</p>
     </Container>
   )
 }

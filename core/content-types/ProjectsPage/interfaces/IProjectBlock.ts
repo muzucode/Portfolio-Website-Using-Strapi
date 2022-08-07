@@ -5,6 +5,7 @@ export interface IProjectBlock {
   title: string,
   backgroundColor: string,
   borderColor: string,
+  fontColor: string,
   project: {
     data: IProject
   }

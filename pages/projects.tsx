@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import ProjectsPage from "../core/content-types/ProjectsPage/module/ProjectsPage.module";
-import { ax, getAll, QueryConfig } from "../core/utility/Axios";
+import { ax } from "../core/utility/Axios";
 
 const Projects: NextPage = (data: any) => {
  
