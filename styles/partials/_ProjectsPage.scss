@@ -1,0 +1,19 @@
+.layout__projects {
+  .region {
+    &__content {
+      .title {
+        h2 {
+          margin: 0;
+        }
+      }
+      .body {
+        margin: 20px 0;
+      }
+      max-width: 1180px;
+      margin: 0 auto;
+      // border: 1px solid red;
+      padding: 30px;
+    }
+  }
+
+}

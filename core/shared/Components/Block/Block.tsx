@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link, { ILink } from '../Link/Link'
-import { skewer } from '../../utility/TagsParser'
+import { skewer } from '../../../utility/TagsParser'
 
 
 export interface IBlock {

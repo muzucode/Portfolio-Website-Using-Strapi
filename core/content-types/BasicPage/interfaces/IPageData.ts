@@ -1,4 +1,4 @@
-import { IImage } from "../../../strapi-interfaces/Image/IImage"
+import { IImage } from "../../../shared/Interfaces/Image/IImage"
 import { IBlocks } from "../components/Blocks"
 
 export interface IPageData {

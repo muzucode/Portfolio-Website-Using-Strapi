@@ -1,7 +1,6 @@
 import React from 'react'
-import Layout, { ILayout } from '../../../shared/Layout/Layout';
-import Region, { IRegion } from '../../../shared/Region/Region';
-import Header from '../../../single-types/Header';
+import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
+import Region, { IRegion } from '../../../shared/Components/Region/Region';
 import Blocks from '../components/Blocks';
 import Body from '../components/Body';
 import HeroImage from '../components/HeroImage';
@@ -11,14 +10,6 @@ import { IBasicPage } from '../interfaces/IBasicPage';
 export default function BasicPage(props: IBasicPage) {
   
   // Regions
-  const RegionHeader: IRegion = {
-    title: 'header',
-    children: (
-      <>
-        <Header {...props.headerData}></Header>
-      </>
-    )
-  }
   const RegionHero: IRegion = {
     title: 'hero',
     children: (
@@ -49,7 +40,6 @@ export default function BasicPage(props: IBasicPage) {
     title: 'alpha',
     regions: (
       <>
-        <Region {...RegionHeader}/>
         <Region {...RegionHero}/>
         <Region {...RegionContent}/>
         <Region {...RegionFooter}/>
