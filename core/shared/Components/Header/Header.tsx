@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react'
 import styled from 'styled-components';
 import { CFRC } from '../../StyledComponents/StyledComponents';
@@ -5,19 +6,32 @@ import { CFRC } from '../../StyledComponents/StyledComponents';
 
 export default function Header() {
 
+  const router = useRouter()
+
+  const getActiveStatus = (path: string): string => {
+    console.log(router.pathname);
+    if(router.pathname === path) {
+      return 'active'
+    } else {
+      return ''
+    };
+  }
+
   return (
     <Container className="header">
       <h2>Sean Hickey</h2>
       <Nav>
-        <a href="/about">About</a>
+        <a href="/about" className={getActiveStatus('/about')} >About</a>
         <NavDivider></NavDivider>
-        <a href="/projects">Projects</a>
+        <a href="/projects"  className={getActiveStatus('/projects')}>Projects</a>
         <NavDivider></NavDivider>
-        <a href="/blog">Blog</a>
+        <a href="/blog"  className={getActiveStatus('/blog')}>Blog</a>
       </Nav>
 
     </Container>
   )
+
+
 }
 
 const Container = styled.div`
@@ -47,6 +61,10 @@ const Nav = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+
+  a.active {
+    color: #3aa6ff;
+  }
 `
 
 const NavDivider = styled.div`

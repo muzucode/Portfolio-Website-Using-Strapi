@@ -1,52 +1,63 @@
-// Layout
-.layout {
+.basic-page {
+  // Layout
+  .layout {
 
-  &__alpha {
+    &__standard {
 
-    // Regions
-    .region {
+      // Regions
+      .region {
 
-      &__header {
+        &__header {
 
-      }
-      &__hero {
+        }
+        &__hero {
 
-      }
-      &__content {
-        .content {
-          // padding: 0px 40px;
+        }
+        &__content {
+          padding: 20px;
+          .content {
+            background-color: rgb(237, 237, 237);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 40px 40px;
+            .title {
 
-          .title {
-            padding: 0px 32px;
-
-            h2 {
-              font-size: 50px;
-              margin: 10px;
-            }
-  
-          }
-          .body {
-            padding: 0px 40px;
-          }
-          .blocks {
-            .block {
-              padding: 20px 40px;
               h2 {
+                font-size: 50px;
                 margin: 0;
               }
+    
+            }
+            .body {
               p {
-                margin: 5px 0px;
+                font-size: 18px;
+                line-height: 30px;
               }
             }
+            .blocks {
+              .block {
+                margin: 50px 0;
+                h2 {
+                  margin: 0;
+                }
+                p {
+                  margin: 5px 0px;
+                }
+              }
+            }
+    
           }
-  
+
+
         }
+        &__footer {
 
-
+        }
       }
-      &__footer {
 
-      }
     }
 
   }

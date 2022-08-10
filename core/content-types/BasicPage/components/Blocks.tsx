@@ -10,14 +10,16 @@ export interface IBlocks {
 }
 
 export default function Blocks(props: IBlocks) {
-  console.log('Printing blocks...')
+
+  const isBlocksEmpty: boolean = props.id === undefined;
+
+  // If there are blocks, then map them, otherwise, just return a blank fragment
+  const blocks = !isBlocksEmpty ? props.Block.map(block => (
+    <Block {...block} key={block.id}></Block>
+  )) : <></>
   return (
     <Container className='blocks'>
-      {
-        props.Block.map(block => (
-          <Block {...block} key={block.id}></Block>
-        ))
-      }
+      {blocks}
     </Container>
   )
 }

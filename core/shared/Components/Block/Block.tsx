@@ -34,12 +34,10 @@ const Container = styled.div<IContainer>`
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
   background-color: ${props => {
     return props.backgroundColor
   }};
   color: ${props => {
     return props.fontColor
   }};
-  /* border: 1px solid red; */
 `

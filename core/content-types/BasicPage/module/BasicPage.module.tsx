@@ -34,10 +34,11 @@ export default function BasicPage(props: IBasicPage) {
       <></>
     )
   }
+
   
   // Layouts
   const LayoutStandard: ILayout = {
-    title: 'alpha',
+    title: 'standard',
     regions: (
       <>
         <Region {...RegionHero}/>
@@ -49,6 +50,8 @@ export default function BasicPage(props: IBasicPage) {
 
 
   return (
-    <Layout {...LayoutStandard}/>
+    <div className='basic-page'>
+      <Layout {...LayoutStandard}/>
+    </div>
   )
 }
