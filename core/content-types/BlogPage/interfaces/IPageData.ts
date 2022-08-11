@@ -1,4 +1,6 @@
 import { IImage } from "../../../shared/Interfaces/Image/IImage"
+import { IBlogPost } from "./IBlogPost"
+import { IBlogPosts } from "./IBlogPosts"
 
 export interface IPageData {
   data: {
@@ -6,8 +8,9 @@ export interface IPageData {
     attributes: {
       title: string,
       body: string,
-      blog_posts: IBlogPost[],
-      HeroImage: IImage,
+      blog_posts: {
+        data: IBlogPost[]
+      },
       createdAt: string,
       publishedAt: string,
       updatedAt: string

@@ -9,7 +9,6 @@ export default function Header() {
   const router = useRouter()
 
   const getActiveStatus = (path: string): string => {
-    console.log(router.pathname);
     if(router.pathname === path) {
       return 'active'
     } else {
@@ -18,6 +17,7 @@ export default function Header() {
   }
 
   return (
+    <div className={router.pathname === '/blog' ? 'visually-hidden' : ''}>
     <Container className="header">
       <h2>Sean Hickey</h2>
       <Nav>
@@ -29,6 +29,9 @@ export default function Header() {
       </Nav>
 
     </Container>
+
+    </div>
+
   )
 
 

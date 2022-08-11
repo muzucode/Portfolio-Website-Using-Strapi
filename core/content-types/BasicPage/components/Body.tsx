@@ -7,10 +7,13 @@ export interface IBody {
   content: string
 }
 export default function Body(props: IBody) {
+
+  function createMarkup() {
+    return {__html: props.content};
+  }
+  
   return (
-    <Container className='body'>
-      <Markdown>{props.content}</Markdown>
-    </Container>
+    <Container dangerouslySetInnerHTML={createMarkup()} className='body'/>
   )
 }
 

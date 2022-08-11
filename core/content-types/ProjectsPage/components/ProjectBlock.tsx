@@ -23,11 +23,15 @@ export default function ProjectBlock(props: IProjectBlock) {
     backgroundColor: props.borderColor,
   }
 
+  function createMarkup() {
+    return {__html: props.project.data.attributes.body};
+  }
+
   return (
     <div style={blockStyles} className={`project-block project-block__${skewer(props.title)}`}>
       <div className='content'>
         <h3>{props.project.data.attributes.title}</h3>
-        <p>{props.project.data.attributes.body}</p>
+        <div dangerouslySetInnerHTML={createMarkup()}></div>
       </div>
       <div style={blockFooterStyles} className='footer'>
         <span>Stack: Next.JS (TypeScript), Strapi</span>

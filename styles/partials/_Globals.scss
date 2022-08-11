@@ -2,11 +2,13 @@
 
 html,
 body {
+  background-color: #fff;
   padding: 0;
   margin: 0;
   font-family: 'Ibarra Real Nova', serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
 
 a {
   color: inherit;
@@ -14,6 +16,8 @@ a {
 }
 
 * {
+  font-family: 'Ibarra Real Nova', serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
   box-sizing: border-box;
 }
 
@@ -22,7 +26,11 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #000;
+    background: #fff;
   }
+}
+
+.visually-hidden {
+  display: none;
 }

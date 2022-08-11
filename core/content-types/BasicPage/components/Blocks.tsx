@@ -10,7 +10,6 @@ export interface IBlocks {
 }
 
 export default function Blocks(props: IBlocks) {
-
   const isBlocksEmpty: boolean = props.id === undefined;
 
   // If there are blocks, then map them, otherwise, just return a blank fragment

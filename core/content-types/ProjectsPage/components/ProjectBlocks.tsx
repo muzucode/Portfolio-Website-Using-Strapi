@@ -8,6 +8,7 @@ interface IProjectBlocks {
   content: IProjectBlock[]
 }
 export default function ProjectBlocks(props: IProjectBlocks) {
+  console.log(props);
   return (
     <Container className='projects'>
       {
