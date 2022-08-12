@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import styled from 'styled-components';
 import { skewer } from '../../../utility/TagsParser';
@@ -6,9 +7,12 @@ import Title from './Title';
 
 export default function BlogPost(props: IBlogPost) {
   return (
-    <Container className={`blog-post blog-post__${skewer(props.attributes.title)}`}>
-      <Title content={props.attributes.title}></Title>
-    </Container>
+    <Link href={`/blog/post/${props.id}`}>
+      <Container className={`blog-post blog-post__${skewer(props.attributes.title)}`}>
+        <Title content={props.attributes.title}></Title>
+      </Container>
+    </Link>
+
 
   )
 }

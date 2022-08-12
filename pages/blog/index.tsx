@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import styled from "styled-components";
-import BasicPage from "../core/content-types/BasicPage/module/BasicPage.module";
-import BlogPage from "../core/content-types/BlogPage/module/BlogPage.module";
-import { Block, IBlock } from "../core/shared/Components/Block/Block";
-import { ax, getAll, QueryConfig } from "../core/utility/Axios";
+import BasicPage from "../../core/content-types/BasicPage/module/BasicPage.module";
+import BlogPage from "../../core/content-types/BlogPage/module/BlogPage.module";
+import { Block, IBlock } from "../../core/shared/Components/Block/Block";
+import { ax, getAll, QueryConfig } from "../../core/utility/Axios";
 
 
 const Blog: NextPage = (data: any) => {

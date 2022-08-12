@@ -17,7 +17,7 @@ export default function Header() {
   }
 
   return (
-    <div className={router.pathname === '/blog' ? 'visually-hidden' : ''}>
+    <div className={router.pathname.indexOf('/blog') >= 0 ? 'visually-hidden' : ''}>
     <Container className="header">
       <h2>Sean Hickey</h2>
       <Nav>
