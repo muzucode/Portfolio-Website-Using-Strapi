@@ -7,12 +7,12 @@ import { IBlogPage } from '../interfaces/IBlogPage';
 
 export default function BlogPage(props: IBlogPage) {
 
-  const RegionHero: IRegion = {
-    title: 'hero',
+  const RegionHeader: IRegion = {
+    title: 'header',
     children: (
       <>
         <Link href="/about">
-          <a>Head back to about page...</a>
+          <a className='exit'>HOME</a>
         </Link>
       </>
     )
@@ -39,7 +39,7 @@ export default function BlogPage(props: IBlogPage) {
     title: 'standard',
     regions: (
       <>
-        <Region {...RegionHero}/>
+        <Region {...RegionHeader}/>
         <Region {...RegionContent}/>
         <Region {...RegionFooter}/>
       </>

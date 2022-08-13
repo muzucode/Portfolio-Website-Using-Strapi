@@ -3,6 +3,25 @@
   .layout {
     &__standard {
       .region {
+        &__header {
+          .content {
+            a.exit {
+              font-family: $font-2;
+              position: relative;
+              left: 40px;
+              top: 40px;
+              background-color: #000;
+              padding: 20px;
+              border-radius: 30px;
+              color: white;
+              font-weight: 500;
+              &:hover{
+                background-color: $blue;
+                transition: background-color .2s ease-in-out;
+              }
+            }
+          }
+        }
         &__content {
           .blog-post-preview {
             height: fit-content;
