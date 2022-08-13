@@ -1,11 +1,45 @@
 .blog-page {
   // Layout
   .layout {
-
     &__standard {
       .region {
         &__content {
+          .blog-post-preview {
+            height: fit-content;
+            width: fit-content;
+            padding: 9px 0;
+            border-radius: 20px;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            position: relative;
+            .underline {
+              width: 0%;
+              height: 2px;
+              background-color: black;
+              margin: 5px 0 0;
+            }
+            &:hover {
+              cursor: pointer;
+              color: $blue;
+              transform: translateX(-20px);
+              transition: 
+                color .2s ease-in,
+                transform .2s ease-in-out;
+              .underline {
+                background-color: $blue;
+                width: 100%;
+                transition:   
+                  width .25s ease-in-out,
+                  background-color .25s ease-in-out;
+              }
+            }
 
+            h3 {
+              margin: 0;
+            }
+          }
         }
       }
     }

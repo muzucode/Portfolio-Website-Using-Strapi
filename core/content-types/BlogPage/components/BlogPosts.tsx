@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { C, CFC } from '../../../shared/StyledComponents/StyledComponents'
 import { IBlogPost } from '../interfaces/IBlogPost';
 import { IBlogPosts } from '../interfaces/IBlogPosts';
-import BlogPost from './BlogPost';
+import BlogPost from './BlogPostPreview';
 
 export default function BlogPosts(props: IBlogPosts) {
 
@@ -14,6 +14,7 @@ export default function BlogPosts(props: IBlogPosts) {
   const posts = !isPostsEmpty ? props.data.map((blogPost: IBlogPost) => (
     <BlogPost {...blogPost} key={blogPost.id}></BlogPost>
   )) : <></>
+
   return (
     <Container className='blog-posts'>
       {posts}

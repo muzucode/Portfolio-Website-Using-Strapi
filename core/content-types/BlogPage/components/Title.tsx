@@ -14,15 +14,12 @@ export default function Title(props: ITitle) {
 
   return (
     <Container className='title'>
-      <h2 dangerouslySetInnerHTML={createMarkup()}></h2>
+      <h3 dangerouslySetInnerHTML={createMarkup()}></h3>
     </Container>
   )
 }
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
-  h2 {
-    margin: 0;
-  }
+  height: fit-content;
 `
