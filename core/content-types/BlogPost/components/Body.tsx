@@ -8,10 +8,14 @@ export interface IBody {
 export default function Body(props: IBody) {
 
   return (
-    <Container dangerouslySetInnerHTML={mu(props.content)} className='body'/>
+    <>
+      <Container dangerouslySetInnerHTML={mu(props.content)} className='body'>
+      </Container>
+    </>
   )
 }
 
 const Container = styled.div`
 
 `
+

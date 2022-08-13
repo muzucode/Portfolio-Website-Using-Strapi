@@ -21,4 +21,5 @@ const Container = styled.div<IContainer>`
   background-size: cover;
   background-position: center center;
   background-image: url(${props => props.bgImg});
+  border-radius: 300px;
 `
