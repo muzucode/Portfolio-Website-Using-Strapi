@@ -3,20 +3,20 @@ import styled from 'styled-components'
 import { C, CFC } from '../../../shared/StyledComponents/StyledComponents'
 import { IBlogPost } from '../interfaces/IBlogPost';
 import { IBlogPosts } from '../interfaces/IBlogPosts';
-import BlogPost from './BlogPostPreview';
+import BlogPostPreview from './BlogPostPreview';
 
-export default function BlogPosts(props: IBlogPosts) {
+export default function BlogPostPreviews(props: IBlogPosts) {
 
   const isPostsEmpty: boolean = props.data.length === 0;
   console.log(isPostsEmpty);
 
   // If there are blocks, then map them, otherwise, just return a blank fragment
   const posts = !isPostsEmpty ? props.data.map((blogPost: IBlogPost) => (
-    <BlogPost {...blogPost} key={blogPost.id}></BlogPost>
+    <BlogPostPreview {...blogPost} key={blogPost.id}></BlogPostPreview>
   )) : <></>
 
   return (
-    <Container className='blog-posts'>
+    <Container className='blog-post-previews'>
       {posts}
     </Container>
   )
@@ -27,5 +27,6 @@ const Container = styled(CFC)`
   position: absolute;
   left: calc(50% - 250px);
   top: 200px;
+  height: fit-content;
   
 `

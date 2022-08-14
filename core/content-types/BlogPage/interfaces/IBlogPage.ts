@@ -1,6 +1,9 @@
-import { IImage } from "../../../shared/Interfaces/Image/IImage"
-import { IPageData } from "./IPageData"
+import { IBlogPageData } from "./IBlogPageData"
+import { IBlogPostTags } from "./IBlogPostTags"
 
 export interface IBlogPage {
-  pageData: IPageData
+  data: {
+    blogPageData: IBlogPageData,
+    tagsData: IBlogPostTags
+  }
 }

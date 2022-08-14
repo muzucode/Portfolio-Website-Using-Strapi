@@ -20,11 +20,14 @@ const Blog: NextPage = (data: any) => {
 export async function getServerSideProps() {
 
   let res = await ax.get('/blog-page?populate=deep');
-  let pageData = await res.data;
+  let blogPageData = await res.data;
+
+  let res2 = await ax.get('/blog-post-tags?populate=deep');
+  let tagsData = await res2.data;
 
 
   return {
-    props: { pageData }
+    props: {data: {blogPageData, tagsData }}
   }
 }
 

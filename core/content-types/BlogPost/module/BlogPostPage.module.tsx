@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
+import { skewer } from '../../../utility/TagsParser';
 import Body, { IBody } from '../components/Body';
 import Hero from '../components/Hero';
 import Title from '../components/Title';
@@ -58,7 +59,7 @@ export default function BlogPostPage(props: IBlogPost) {
 
 
   return (
-    <div className='blog-post'>
+    <div className={`blog-post blog-post-${skewer(props.data.attributes.title)}`}>
       <Layout {...LayoutStandard}/>
     </div>
   )

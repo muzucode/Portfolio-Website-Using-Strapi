@@ -2,8 +2,10 @@ import Link from 'next/link';
 import React from 'react'
 import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
-import BlogPosts from '../components/BlogPosts';
+import BlogPosts from '../components/BlogPostPreviews';
+import TagsBlock from '../components/BlogPageTagsBlock';
 import { IBlogPage } from '../interfaces/IBlogPage';
+import BlogPageTagsBlock from '../components/BlogPageTagsBlock';
 
 export default function BlogPage(props: IBlogPage) {
 
@@ -22,7 +24,8 @@ export default function BlogPage(props: IBlogPage) {
     title: 'content',
     children: (
       <>
-        <BlogPosts {...props.pageData.data.attributes.blog_posts}></BlogPosts>
+        <BlogPosts {...props.data.blogPageData.data.attributes.blog_posts}></BlogPosts>
+        <BlogPageTagsBlock {...props.data.tagsData}></BlogPageTagsBlock>
       </>
     )
   }

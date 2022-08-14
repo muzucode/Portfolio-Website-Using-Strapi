@@ -2,7 +2,7 @@ import { IImage } from "../../../shared/Interfaces/Image/IImage"
 import { IBlogPost } from "./IBlogPost"
 import { IBlogPosts } from "./IBlogPosts"
 
-export interface IPageData {
+export interface IBlogPageData {
   data: {
     id: number,
     attributes: {

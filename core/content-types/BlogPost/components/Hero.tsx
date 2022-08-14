@@ -15,6 +15,7 @@ interface IContainer {
   bgImg: string
 }
 const Container = styled.div<IContainer>`
+  margin: 30px 0 0;
   height: 400px;
   width: 100%;
   background-repeat: no-repeat;
