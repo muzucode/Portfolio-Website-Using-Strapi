@@ -8,7 +8,6 @@ import BlogPostPreview from './BlogPostPreview';
 export default function BlogPostPreviews(props: IBlogPosts) {
 
   const isPostsEmpty: boolean = props.data.length === 0;
-  console.log(isPostsEmpty);
 
   // If there are blocks, then map them, otherwise, just return a blank fragment
   const posts = !isPostsEmpty ? props.data.map((blogPost: IBlogPost) => (

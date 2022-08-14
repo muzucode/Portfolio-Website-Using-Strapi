@@ -1,3 +1,5 @@
+import { IBlogPostTags } from "./IBlogPostTags";
+
 export interface IBlogPost {
   id: number,
   attributes: {
@@ -7,5 +9,6 @@ export interface IBlogPost {
     updatedAt: string,
     publishedAt: string
     cover: any;
+    tags: IBlogPostTags
   }
 }
