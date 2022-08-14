@@ -22,7 +22,12 @@ export async function getStaticPaths() {
       { params: { pid: '2' } },
       { params: { pid: '3' } },
       { params: { pid: '4' } },
-      { params: { pid: '5' } },
+      { params: { pid: '6' } },
+      { params: { pid: '7' } },
+      { params: { pid: '8' } },
+      { params: { pid: '9' } },
+      { params: { pid: '10' } },
+      { params: { pid: '11' } },
     ],
     fallback: false, // can also be true or 'blocking'
   }

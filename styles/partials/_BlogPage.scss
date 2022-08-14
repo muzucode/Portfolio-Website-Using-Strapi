@@ -86,18 +86,6 @@
                 justify-content: center;
                 flex: 1;
                 font-family: $font-2;
-                &:hover {
-                  cursor: pointer;
-                  color: $blue-1;
-                  background-color: $blue-3;
-                  transform: translateY(-3px) scale(103%);
-                  box-shadow: 0 3px 5px $blue-2;
-                  transition: 
-                    color .2s ease-in-out, 
-                    background-color .2s ease-in-out,
-                    transform .2s ease-in-out,
-                    box-shadow .2s ease-in-out
-                }
               }
             }
           }

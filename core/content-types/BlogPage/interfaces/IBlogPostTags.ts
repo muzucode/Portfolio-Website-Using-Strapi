@@ -3,6 +3,9 @@ export interface Attributes {
     createdAt: Date;
     updatedAt: Date;
     publishedAt: Date;
+    colorPrimary: string;
+    colorSecondary: string;
+    colorTertiary: string;
 }
 
 export interface IBlogPostTag {
