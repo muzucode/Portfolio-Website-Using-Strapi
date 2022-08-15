@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import styled from "styled-components";
 import BasicPage from "../core/content-types/BasicPage/module/BasicPage.module";
-import { Block, IBlock } from "../core/shared/Components/Block/Block";
+import { Block, IBlock } from "../core/content-types/BasicPage/components/Block";
 import { ax, getAll, QueryConfig } from "../core/utility/Axios";
 
 const About: NextPage = (data: any) => {

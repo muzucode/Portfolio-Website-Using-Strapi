@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link, { ILink } from '../Link/Link'
+import Link, { ILink } from '../../../shared/Components/Link/Link'
 import { skewer } from '../../../utility/TagsParser'
 import { mu } from '../../../utility/Markup'
 
