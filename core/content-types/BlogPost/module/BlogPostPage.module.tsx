@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
 import { skewer } from '../../../utility/TagsParser';
@@ -9,6 +9,7 @@ import Title from '../components/Title';
 import { IBlogPost } from '../interfaces/IBlogPost';
 
 export default function BlogPostPage(props: IBlogPost) {
+
 
   const RegionHeader: IRegion = {
     title: 'header',
