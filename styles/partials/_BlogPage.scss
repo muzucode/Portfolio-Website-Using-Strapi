@@ -29,19 +29,22 @@
           .blog-post-previews {
             .blog-post-preview {
               height: fit-content;
-              width: fit-content;
+              width: 100%;
               padding: 9px 0;
-              border-radius: 20px;
               color: #000;
               display: flex;
               flex-direction: column;
               text-align: left;
               position: relative;
-              .underline {
-                width: 0%;
-                height: 2px;
-                background-color: black;
-                margin: 5px 0 0;
+              .text-container {
+                width: fit-content;
+                height: fit-content;
+                .underline {
+                  width: 0%;
+                  height: 1px;
+                  background-color: black;
+                  margin: 5px 0 0;
+                }
               }
               &:hover {
                 cursor: pointer;

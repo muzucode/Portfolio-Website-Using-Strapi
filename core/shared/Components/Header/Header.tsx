@@ -23,8 +23,8 @@ export default function Header() {
       <Nav>
         <a href="/about" className={getActiveStatus('/about')} >About</a>
         <NavDivider></NavDivider>
-        <a href="/projects"  className={getActiveStatus('/projects')}>Projects</a>
-        <NavDivider></NavDivider>
+        {/* <a href="/projects"  className={getActiveStatus('/projects')}>Projects</a>
+        <NavDivider></NavDivider> */}
         <a href="/blog"  className={getActiveStatus('/blog')}>Blog</a>
       </Nav>
 

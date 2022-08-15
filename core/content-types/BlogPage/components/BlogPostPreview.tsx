@@ -17,8 +17,10 @@ export default function BlogPostPreview(props: IBlogPost) {
             onMouseOver={() => value?.setHighlightedTagsCtx(props.attributes.tags)} 
             onMouseLeave={() => value?.setHighlightedTagsCtx(null)} 
             >
-              <Title content={props.attributes.title}></Title>
-              <div className='underline'></div>
+              <div className='text-container'>
+                <Title content={props.attributes.title}></Title>
+                <div className='underline'></div>
+              </div>
             </div>
           </Link>
         )

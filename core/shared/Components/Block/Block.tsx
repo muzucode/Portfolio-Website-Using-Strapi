@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Link, { ILink } from '../Link/Link'
 import { skewer } from '../../../utility/TagsParser'
+import { mu } from '../../../utility/Markup'
 
 
 export interface IBlock {
@@ -19,7 +20,7 @@ export function Block(props: IBlock) {
 
     <Container className={`block block__${skewer(props.Title)}`} backgroundColor={props.BackgroundColor} fontColor={props.FontColor}>
       <h2>{props.Title}</h2>
-      <p>{props.Description}</p>
+      <div className='description' dangerouslySetInnerHTML={mu(props.Description)}></div>
       <Link {...props.Link}></Link>
     </Container>
   )

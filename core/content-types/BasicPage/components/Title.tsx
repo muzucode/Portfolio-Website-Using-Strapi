@@ -8,7 +8,7 @@ export interface ITitle {
 export default function Title(props: ITitle) {
   return (
     <Container className='title'>
-      <h2>{props.content}</h2>
+      <h1>{props.content}</h1>
     </Container>
   )
 }
