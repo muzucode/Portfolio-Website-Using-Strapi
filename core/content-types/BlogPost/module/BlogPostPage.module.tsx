@@ -13,13 +13,6 @@ import { IBlogPost } from '../interfaces/IBlogPost';
 export default function BlogPostPage(props: IBlogPost) {
 
   // Regions
-  const RegionHeader: IRegion = {
-    title: 'header',
-    children: (
-      <>
-      </>
-    )
-  }
   const RegionHero: IRegion = {
     title: 'hero',
     children: (
@@ -46,23 +39,15 @@ export default function BlogPostPage(props: IBlogPost) {
       </>
     )
   }
-  const RegionFooter: IRegion = {
-    title: 'footer',
-    children: (
-      <>
-      </>
-    )
-  }
   // Layouts
   const LayoutStandard: ICTLayout = {
     contentType: 'blog-post',
     title: 'standard',
+    insideArticleTag: true,
     regions: (
       <>
-        <Region {...RegionHeader}/>
         <Region {...RegionHero}/>
         <Region {...RegionContent}/>
-        <Region {...RegionFooter}/>
       </>
     )
   }

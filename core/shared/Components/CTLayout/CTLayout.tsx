@@ -5,18 +5,36 @@ export interface ICTLayout {
   title: string,
   contentType: string
   regions: JSX.Element,
+  // this tag is useful for using a shared layout on a basic page
+  // vs a blog post page.  Some pages may not want <article> tags.
+  insideArticleTag?: boolean
   style?: React.CSSProperties
 }
 
 export default function CTLayout(props: ICTLayout) {
+  const renderRegions = () => {
+    if(props.insideArticleTag) {
+      return (
+        <article>
+          <div className='regions-wrap'>
+            {props.regions}
+          </div>
+        </article>
+      )
+    } else {
+      return (
+        <div className='regions-wrap'>
+          {props.regions}
+        </div>
+      )
+    }
+  }
   return (
-    <div 
+    <main 
     style={props.style} 
     className={classchain(['ctlayout', props.contentType, props.title])
     }>
-      <div className='wrap'>
-        {props.regions}
-      </div>
-    </div>
+      {renderRegions()}
+    </main>
   )
 }
