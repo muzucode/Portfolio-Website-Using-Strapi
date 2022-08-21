@@ -12,7 +12,35 @@
             margin: 0 auto 100px;
             h1 {
               text-align: center;
-              margin: 40px 0 100px;
+              margin: 40px 0 40px;
+            }
+            .meta-block {
+              display: flex;
+              flex-direction: column;
+              .authors {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                .author {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  // border: 1px solid lime;
+                  &__avatar {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    margin: 0;
+                  }
+                  &__name {
+                    display: inline-block;
+                    font-size: 24px;
+                    margin: 5px 0 0 10px;
+                    color: rgb(159, 159, 159);
+                  }
+                }
+              }
             }
             .body {
               line-height: 32px;

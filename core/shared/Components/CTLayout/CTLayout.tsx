@@ -12,6 +12,7 @@ export interface ICTLayout {
 }
 
 export default function CTLayout(props: ICTLayout) {
+  // Decide if an <article> tag should be included or not
   const renderRegions = () => {
     if(props.insideArticleTag) {
       return (

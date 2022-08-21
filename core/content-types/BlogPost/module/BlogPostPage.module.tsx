@@ -25,9 +25,9 @@ export default function BlogPostPage(props: IBlogPost) {
   }
   const metaBlockData: IMetaBlock =  {
     publishedAt: props.data.attributes.publishedAt,
-    author: 'Sean',
-    score: 600,
-    tags: ['Sean', 'React']
+    authors: props.data.attributes.authors,
+    score: props.data.attributes.score,
+    tags: props.data.attributes.tags
   }
   const RegionContent: IRegion = {
     title: 'content',
