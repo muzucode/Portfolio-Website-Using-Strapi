@@ -1,15 +1,22 @@
 import React from 'react'
-import { skewer } from '../../../utility/TagsParser'
+import { classchain, skewer } from '../../../utility/TagsParser'
 
 export interface ICTLayout {
   title: string,
-  regions: JSX.Element
+  contentType: string
+  regions: JSX.Element,
+  style?: React.CSSProperties
 }
 
 export default function CTLayout(props: ICTLayout) {
   return (
-    <div className={`ctlayout ${skewer('ctlayout__' + props.title)}`}>
-      {props.regions}
+    <div 
+    style={props.style} 
+    className={classchain(['ctlayout', props.contentType, props.title])
+    }>
+      <div className='wrap'>
+        {props.regions}
+      </div>
     </div>
   )
 }

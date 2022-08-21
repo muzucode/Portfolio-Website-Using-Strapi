@@ -1,4 +1,5 @@
 import React from 'react'
+import { classchain } from '../../../utility/TagsParser'
 
 export interface IRegion {
   title: string,
@@ -6,8 +7,8 @@ export interface IRegion {
 }
 export default function Region(props: IRegion) {
   return (
-    <div className={"region region__" + props.title}>
-      <div className="content">
+    <div className={classchain(['region', props.title])}>
+      <div className="wrap">
         {props.children}
       </div>
     </div>
