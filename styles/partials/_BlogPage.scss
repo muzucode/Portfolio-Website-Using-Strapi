@@ -36,6 +36,9 @@
               flex-direction: column;
               text-align: left;
               position: relative;
+              animation: fadeUp ease-in-out .6s;
+              animation-iteration-count: 1;
+              animation-fill-mode: forwards;
               .text-container {
                 width: fit-content;
                 height: fit-content;
