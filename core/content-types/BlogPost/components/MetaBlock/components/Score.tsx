@@ -5,6 +5,7 @@ interface IScore {
 }
 export default function Score(props: IScore) {
   return (
-    <div className='score'>Score: {props.content}</div>
+    // <div className='score'>Score: {props.content}</div>
+    <></>
   )
 }

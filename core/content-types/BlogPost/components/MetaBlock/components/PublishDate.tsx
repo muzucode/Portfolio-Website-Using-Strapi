@@ -5,6 +5,8 @@ interface IPublishDate {
 }
 export default function PublishDate(props: IPublishDate) {
   return (
-    <div className='publish-date'>PublishDate</div>
+    <div className='publish-date'>
+      Published: {new Date(props.content).toLocaleDateString()}
+    </div>
   )
 }

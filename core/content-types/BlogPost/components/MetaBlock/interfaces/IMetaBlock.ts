@@ -1,8 +1,8 @@
-import { IAuthors, Tags } from "../../../interfaces/IBlogPost";
+import { IAuthors, ITags } from "../../../interfaces/IBlogPost";
 
 export interface IMetaBlock {
     publishedAt: Date,
     authors: IAuthors,
     score: number,
-    tags: Tags
+    tags: ITags
 }

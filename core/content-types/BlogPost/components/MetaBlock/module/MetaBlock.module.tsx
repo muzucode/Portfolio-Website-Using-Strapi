@@ -21,8 +21,5 @@ const Container = styled.div`
   /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
-  div:first-child {
-    color: red !important;
-    width: 100%;
-  }
+  justify-content: start;
 `

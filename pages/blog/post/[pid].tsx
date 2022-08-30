@@ -4,6 +4,7 @@ import React from 'react'
 import { IBlogPost } from '../../../core/content-types/BlogPost/interfaces/IBlogPost';
 import BlogPostPage from '../../../core/content-types/BlogPost/module/BlogPostPage.module';
 import { ax } from '../../../core/utility/Axios';
+import { enableImages } from '../../../core/utility/Markup';
 
 
 const BlogPost: NextPage = (data: any) => {
@@ -44,6 +45,7 @@ export async function getStaticProps(params: StaticPropsParams) {
 
   let res = await ax.get(`/blog-posts/${params.params.pid}?populate=deep`);
   let pageData = res.data;
+  pageData['data']['attributes']['body'] = enableImages(pageData['data']['attributes']['body'])
 
   return {
     // Passed to the page component as props

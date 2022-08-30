@@ -36,9 +36,6 @@
               flex-direction: column;
               text-align: left;
               position: relative;
-              animation: fadeUp ease-in-out .6s;
-              animation-iteration-count: 1;
-              animation-fill-mode: forwards;
               .text-container {
                 width: fit-content;
                 height: fit-content;
@@ -53,9 +50,7 @@
                 cursor: pointer;
                 color: $blue-2;
                 transform: translateX(-20px);
-                transition: 
-                  color .2s ease-in,
-                  transform .2s ease-in-out;
+                transition: color .2s ease-in, transform .2s ease-in-out;
                 .underline {
                   background-color: $blue-2;
                   width: 100%;

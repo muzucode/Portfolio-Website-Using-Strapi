@@ -78,13 +78,13 @@ export interface Attributes3 {
     publishedAt: Date;
 }
 
-export interface Datum {
+export interface ITag {
     id: number;
     attributes: Attributes3;
 }
 
-export interface Tags {
-    data: Datum[];
+export interface ITags {
+    data: ITag[];
 }
 
 export interface Comments {
@@ -216,7 +216,7 @@ export interface Attributes {
     publishedAt: Date;
     score: number;
     cover: Cover;
-    tags: Tags;
+    tags: ITags;
     comments: Comments;
     authors: IAuthors;
 }

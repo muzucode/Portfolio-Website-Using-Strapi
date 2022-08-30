@@ -1,11 +1,20 @@
 import React from 'react'
-import { ITag } from '../interfaces/ITag'
+import { ITags } from '../../../interfaces/IBlogPost'
+import Tag from './Tag'
 
-interface ITags {
-  content: ITag[]
+interface ITagsComponent {
+  content: ITags
 }
-export default function Tags(props: ITags) {
+export default function Tags(props: ITagsComponent) {
   return (
-    <div className='tags'>Tags</div>
+    <div className='tags'>
+      {
+        props.content.data.map(tag => {
+          return (
+            <Tag content={tag}></Tag>
+          )
+        })
+      }
+    </div>
   )
 }
