@@ -17,14 +17,14 @@ export default function Header() {
   }
 
   return (
-    <div className={router.pathname.indexOf('/blog') >= 0 ? 'visually-hidden' : ''}>
+    <div className={
+      router.pathname.indexOf('/blog') >= 0 ||
+      router.pathname.indexOf('/about') >= 0 ? 'visually-hidden' : ''}>
     <Container className="header">
       <h2>Sean Hickey</h2>
       <Nav>
         <a href="/about" className={getActiveStatus('/about')} >About</a>
         <NavDivider></NavDivider>
-        {/* <a href="/projects"  className={getActiveStatus('/projects')}>Projects</a>
-        <NavDivider></NavDivider> */}
         <a href="/blog"  className={getActiveStatus('/blog')}>Blog</a>
       </Nav>
 
