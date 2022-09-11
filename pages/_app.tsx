@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <script src="/path/to/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
       </Head>
-      <Header></Header>
+      {/* <Header></Header> */}
       <Component {...pageProps} />
     </>
   )

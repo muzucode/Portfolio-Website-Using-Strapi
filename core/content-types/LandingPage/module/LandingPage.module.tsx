@@ -2,6 +2,8 @@ import React from 'react'
 import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
 import Bubbles from '../components/Bubbles';
+import NameAndTitle from '../components/NameAndTitle';
+import VideoBackground from '../components/VideoBackground';
 import { ILandingPage } from '../interfaces/ILandingPage';
 
 export default function LandingPage(props: ILandingPage) {
@@ -18,7 +20,9 @@ export default function LandingPage(props: ILandingPage) {
     title: 'content',
     children: (
       <>
-        <Bubbles></Bubbles>
+        <VideoBackground/>
+        <NameAndTitle/>
+        <Bubbles/>
       </>
     )
   }

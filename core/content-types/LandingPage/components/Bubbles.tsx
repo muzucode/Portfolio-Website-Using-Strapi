@@ -1,22 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { IBubble } from '../interfaces/IBubble';
 import { IBubbles } from '../interfaces/IBubbles'
-import './Bubbles.module.css'
+import Bubble from './Bubble';
 
 
 export default function Bubbles(props: IBubbles) {
+	const [activeBubble, setActiveBubble] = useState<number>(1);
+	const bubbleProps = (num: number): IBubble => {
+		return {
+			className: activeBubble === num ? 'active' : '',
+			id: `bubble-${num}`,
+			onClick: () =>{ 
+				setActiveBubble(num);
+				console.log(num);
+			}
+		}
+	}
+	
   return (
 	<>
-		<Video autoPlay muted loop>
-		<source src={'/assets/bg-video.mp4'} type="video/mp4"/>
-		</Video>
-	
 		<Container>
-			<Bubble1></Bubble1>
-			<Bubble2></Bubble2>
-			<Bubble3></Bubble3>
-			<Bubble4></Bubble4>
-			<Bubble5></Bubble5>
+			<Bubble {...bubbleProps(1)}></Bubble>
+			<Bubble {...bubbleProps(2)}></Bubble>
+			<Bubble {...bubbleProps(3)}></Bubble>
+			<Bubble {...bubbleProps(4)}></Bubble>
+			<Bubble {...bubbleProps(5)}></Bubble>
 		</Container>
 	</>
 
@@ -24,56 +33,67 @@ export default function Bubbles(props: IBubbles) {
 }
 
 const Container = styled.div`
+	position: relative;
+	left: 100px;
 	height: 100vh;
 	width: 100%;
+	z-index: 3;
 	div {
-		border: 1px solid #bcbcbc;
-		/* box-shadow: 0px 0px 20px #cfcfcf; */
+		transform: scale(1);
+		box-shadow: 0 0 0px #92ebff;
+		transition: transform .2s ease-in-out, box-shadow .4s ease-in-out;
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.05);
+			box-shadow: 0 0 30px #92ebff;
+			transition: transform .2s ease-in-out, box-shadow .3s ease-in-out;
+		}
 	}
+
 `
 const Bubble1 = styled.div`
 	position: absolute;
-	transform: translate3d(33vw, 10vh, 0);
+	left: 33vw;
+	top: 10vh;
 	border-radius: 50%;
 	width: 200px;
 	height: 200px;
-	
 	background-image: url(/assets/img-nextjs.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 `
 const Bubble2 = styled.div`
-	transform: translate3d(46vw, 30vh, 0);
+	left: 46vw;
+	top: 30vh;
 	position: absolute;
 	border-radius: 50%;
 	width: 175px;
 	height: 175px;
-	
 	background-image: url(/assets/img-strapi-logo.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%;
 `
 const Bubble3 = styled.div`
-	transform: translate3d(58vw, 47vh, 0);
+	left: 58vw;
+	top: 47vh;
 	position: absolute;
 	border-radius: 50%;
 	width: 150px;
 	height: 150px;
-	
 	background-image: url(/assets/img-react-typescript-logo.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 120%;
 `
 const Bubble4 = styled.div`
-	transform: translate3d(70vw, 60vh, 0);
+	left: 70vw;
+	top: 60vh;
 	position: absolute;
 	border-radius: 50%;
 	width: 125px;
 	height: 125px;
-	
 	background-image: url(/assets/img-go-logo.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -83,12 +103,12 @@ const Bubble4 = styled.div`
 	justify-content: center;
 `
 const Bubble5 = styled.div`
-	transform: translate3d(81vw, 71vh, 0);
+	left: 81vw;
+	top: 71vh;
 	position: absolute;
 	border-radius: 50%;
 	width: 100px;
 	height: 100px;
-	
 	background-image: url(/assets/img-aws-logo.png);
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -96,11 +116,4 @@ const Bubble5 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-`
-
-const Video = styled.video`
-position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
 `
