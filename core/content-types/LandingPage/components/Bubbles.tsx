@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { KeyboardEvent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { IBubble } from '../interfaces/IBubble';
 import { IBubbleInfo } from '../interfaces/IBubbleInfo';
@@ -9,40 +9,47 @@ import BubbleInfo from './BubbleInfo';
 
 export default function Bubbles(props: IBubbles) {
 	const [activeBubble, setActiveBubble] = useState<number>(0);
-	const [isBubbleInfoVisible, setBubbleInfoVisibility] = useState<boolean>(false);
+	const [isVisible, setVisibility] = useState<boolean>(false);
+	
 	const bubbleProps = (num: number): IBubble => {
 		return {
 			className: activeBubble === num ? 'active' : '',
 			id: `bubble-${num}`,
-			onClick: () =>{ 
+			onClick: () => { 
 				setActiveBubble(num);
 				showBubbleInfo(num);
-				console.log(num);
 			}
 		}
 	}
 	const bubbleInfoProps: IBubbleInfo = {
-		className: isBubbleInfoVisible ? 'visible' : 'hidden',
-		bubbleNumber: activeBubble
+		isVisible: isVisible,
+		bubbleNumber: activeBubble,
+		toggleVisibility: setVisibility,
 	}
-
 	const showBubbleInfo = (num: number) => {
-		setBubbleInfoVisibility(true);
-
+		setVisibility(true);
 	}
+	const hideBubbleInfo = (e: KeyboardEvent) => {
+		if(e.key === "Escape") {
+			setVisibility(false);
+		}
+	}
+
+	useEffect(() => {
+		document.addEventListener("keydown", hideBubbleInfo)
+	})
 	
   return (
-	<>
-		<BubbleInfo {...bubbleInfoProps}/>
-		<Container>
-			<Bubble {...bubbleProps(1)}></Bubble>
-			<Bubble {...bubbleProps(2)}></Bubble>
-			<Bubble {...bubbleProps(3)}></Bubble>
-			<Bubble {...bubbleProps(4)}></Bubble>
-			<Bubble {...bubbleProps(5)}></Bubble>
-		</Container>
-	</>
-
+		<>
+			<BubbleInfo {...bubbleInfoProps}/>
+			<Container>
+				<Bubble {...bubbleProps(1)}></Bubble>
+				<Bubble {...bubbleProps(2)}></Bubble>
+				<Bubble {...bubbleProps(3)}></Bubble>
+				<Bubble {...bubbleProps(4)}></Bubble>
+				<Bubble {...bubbleProps(5)}></Bubble>
+			</Container>
+		</>
   )
 }
 

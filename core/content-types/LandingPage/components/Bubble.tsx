@@ -76,7 +76,7 @@ const Container = styled.div`
 	justify-content: center;
 	}
 	&.active {
-		border: 4px solid #92ebff;
-		box-shadow: 0 0 30px #92ebff;
+		/* border: 4px solid #92ebff;
+		box-shadow: 0 0 30px #92ebff; */
 	}
 `

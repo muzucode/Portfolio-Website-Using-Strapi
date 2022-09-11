@@ -1,4 +1,5 @@
 export interface IBubbleInfo {
-	className: string,
-	bubbleNumber: number
+	isVisible: boolean,
+	bubbleNumber?: number,
+	toggleVisibility: React.Dispatch<React.SetStateAction<any>>
 }
