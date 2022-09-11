@@ -1,25 +1,39 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { IBubble } from '../interfaces/IBubble';
+import { IBubbleInfo } from '../interfaces/IBubbleInfo';
 import { IBubbles } from '../interfaces/IBubbles'
 import Bubble from './Bubble';
+import BubbleInfo from './BubbleInfo';
 
 
 export default function Bubbles(props: IBubbles) {
-	const [activeBubble, setActiveBubble] = useState<number>(1);
+	const [activeBubble, setActiveBubble] = useState<number>(0);
+	const [isBubbleInfoVisible, setBubbleInfoVisibility] = useState<boolean>(false);
 	const bubbleProps = (num: number): IBubble => {
 		return {
 			className: activeBubble === num ? 'active' : '',
 			id: `bubble-${num}`,
 			onClick: () =>{ 
 				setActiveBubble(num);
+				showBubbleInfo(num);
 				console.log(num);
 			}
 		}
 	}
+	const bubbleInfoProps: IBubbleInfo = {
+		className: isBubbleInfoVisible ? 'visible' : 'hidden',
+		bubbleNumber: activeBubble
+	}
+
+	const showBubbleInfo = (num: number) => {
+		setBubbleInfoVisibility(true);
+
+	}
 	
   return (
 	<>
+		<BubbleInfo {...bubbleInfoProps}/>
 		<Container>
 			<Bubble {...bubbleProps(1)}></Bubble>
 			<Bubble {...bubbleProps(2)}></Bubble>
