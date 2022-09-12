@@ -4,7 +4,7 @@ import { mu } from '../../../utility/Markup'
 import { IBubbleInfo } from '../interfaces/IBubbleInfo'
 
 export default function BubbleInfo(props: IBubbleInfo) {
-  
+
   return (
     <Container 
     className={`${props.isVisible ? 'visible' : 'hidden'} bubble-info`}
@@ -35,9 +35,6 @@ const Container = styled.div<IContainer>`
   background-color: ${props => {
     return props.bgColor
   }};  
-  color: ${props => {
-    return props.textColor
-  }};
   z-index: 10;
   transition: height 1.2s ease-in-out;
   overflow: hidden;
@@ -46,7 +43,9 @@ const Container = styled.div<IContainer>`
     transition: height 1.2s ease-in-out;
   }
   h1, h2, p {
-    color: #fff;
+    color: ${props => {
+      return props.textColor
+    }};
   }
 `
 
@@ -67,7 +66,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   margin: 0;
 `
-const ShortDescription = styled.p`
+const ShortDescription = styled.div`
   margin: 0;
 `
 const EscapeButton = styled.div`
