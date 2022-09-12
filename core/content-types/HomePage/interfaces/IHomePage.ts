@@ -10,18 +10,6 @@ export interface Thumbnail {
     url: string;
 }
 
-export interface Large {
-    name: string;
-    hash: string;
-    ext: string;
-    mime: string;
-    path?: any;
-    width: number;
-    height: number;
-    size: number;
-    url: string;
-}
-
 export interface Medium {
     name: string;
     hash: string;
@@ -48,12 +36,11 @@ export interface Small {
 
 export interface Formats {
     thumbnail: Thumbnail;
-    large: Large;
     medium: Medium;
     small: Small;
 }
 
-export interface Attributes2 {
+export interface Attributes3 {
     name: string;
     alternativeText: string;
     caption: string;
@@ -74,20 +61,45 @@ export interface Attributes2 {
 
 export interface Data2 {
     id: number;
-    attributes: Attributes2;
+    attributes: Attributes3;
 }
 
-export interface BackgroundImage {
+export interface BubbleImage {
     data: Data2;
 }
 
-export interface Attributes {
-    title: string;
-    body: string;
+export interface Projects {
+    data: any[];
+}
+
+export interface Attributes2 {
+    name: string;
+    description: string;
     createdAt: Date;
     updatedAt: Date;
     publishedAt: Date;
-    background_image: BackgroundImage;
+    color_background: string;
+    color_text: string;
+    bubble_image: BubbleImage;
+    projects: Projects;
+}
+
+export interface IBubbleData {
+    id: number;
+    attributes: Attributes2;
+}
+
+export interface IBubblesData {
+    data: IBubbleData[];
+}
+
+export interface Attributes {
+    name: string;
+    job_title: string;
+    createdAt: Date;
+    updatedAt: Date;
+    publishedAt: Date;
+    bubbles: IBubblesData;
 }
 
 export interface Data {
@@ -98,7 +110,11 @@ export interface Data {
 export interface Meta {
 }
 
-export interface ILandingPage {
+interface IHomePageData {
     data: Data;
     meta: Meta;
+}
+
+export interface IHomePage {
+    data: IHomePageData
 }

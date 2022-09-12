@@ -4,9 +4,13 @@ import Region, { IRegion } from '../../../shared/Components/Region/Region';
 import Bubbles from '../components/Bubbles';
 import NameAndTitle from '../components/NameAndTitle';
 import VideoBackground from '../components/VideoBackground';
-import { ILandingPage } from '../interfaces/ILandingPage';
+import { IHomePage } from '../interfaces/IHomePage';
 
-export default function LandingPage(props: ILandingPage) {
+// IHomePage is really just the JSON response of a Bubbles request.
+// TODO: Abstract the interface to have bubbles and other response schemas
+// as interfaces.
+
+export default function HomePage(props: IHomePage) {
   
   // Regions
   const RegionHero: IRegion = {
@@ -22,7 +26,7 @@ export default function LandingPage(props: ILandingPage) {
       <>
         <VideoBackground/>
         <NameAndTitle/>
-        <Bubbles/>
+        <Bubbles data={props.data.data.attributes.bubbles.data}/>
       </>
     )
   }
@@ -31,7 +35,7 @@ export default function LandingPage(props: ILandingPage) {
     children: (
       <>
       </>
-    )
+    ) 
   }
 
   
@@ -49,7 +53,7 @@ export default function LandingPage(props: ILandingPage) {
 
 
   return (
-    <div className='landing-page'>
+    <div className='home-page'>
       <Layout {...LayoutStandard}/>
     </div>
   )

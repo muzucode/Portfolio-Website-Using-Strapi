@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import LandingPage from "../core/content-types/LandingPage/module/LandingPage.module";
+import HomePage from "../core/content-types/HomePage/module/HomePage.module";
 import { ax } from "../core/utility/Axios";
 
 const Home: NextPage = (data: any) => {
@@ -7,10 +7,20 @@ const Home: NextPage = (data: any) => {
   console.log(data)
 
   return (
-    <LandingPage {...data}/>
+    <HomePage {...data}/>
   );
 }
 
+export async function getStaticProps() {
+
+  let res = await ax.get(`/home-page?populate=deep`);
+  let pageData = res.data;
+
+  return {
+    // Passed to the page component as props
+    props: { data: pageData },
+  }
+}
 
 export default Home
 
