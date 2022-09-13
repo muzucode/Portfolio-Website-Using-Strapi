@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
+import BlogLink from '../components/BlogLink/BlogLink';
 import Bubbles from '../components/Bubbles';
 import NameAndTitle from '../components/NameAndTitle';
 import VideoBackground from '../components/VideoBackground';

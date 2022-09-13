@@ -80,6 +80,7 @@ export interface Attributes2 {
     publishedAt: Date;
     color_background: string;
     color_text: string;
+    color_highlight: string;
     bubble_image: BubbleImage;
     projects: Projects;
 }

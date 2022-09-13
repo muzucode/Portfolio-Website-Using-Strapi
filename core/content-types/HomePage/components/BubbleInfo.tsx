@@ -17,7 +17,9 @@ export default function BubbleInfo(props: IBubbleInfo) {
 
 
 
-      <EscapeButton onClick={() => props.toggleVisibility(false)}/>
+      <EscapeButton 
+      onClick={() => props.toggleVisibility(false)}
+      highlightColor={props.data.attributes.color_highlight}/>
     </Container>
   )
 }
@@ -35,7 +37,7 @@ const Container = styled.div<IContainer>`
   background-color: ${props => {
     return props.bgColor
   }};  
-  z-index: 10;
+  z-index: 5;
   transition: height 1.2s ease-in-out;
   overflow: hidden;
   &.visible {
@@ -53,7 +55,9 @@ const Content = styled.div`
   margin: 0 auto;
   padding: 100px 0;
   max-width: 1300px;
-  /* border: 1px solid white; */
+  p, h2 {
+    margin: 0;
+  }
 `
 
 const Title = styled.h1`
@@ -69,7 +73,10 @@ const Subtitle = styled.h2`
 const ShortDescription = styled.div`
   margin: 0;
 `
-const EscapeButton = styled.div`
+interface IEscapeButton {
+  highlightColor: string
+}
+const EscapeButton = styled.div<IEscapeButton>`
   width: 200px;
   height: 30px;
   color: #fff;
@@ -77,13 +84,13 @@ const EscapeButton = styled.div`
   bottom: 0;
   left: calc(50% - 100px);
   border-radius: 40px 40px 0 0;
-  box-shadow: 0 0 0px 0px #92ebff;
+  box-shadow: 0 0 0px 0px ${props => props.highlightColor};
   background-color: #fff;
   transition: box-shadow 1.2s ease-in-out, background-color 1.2s ease-in-out;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 15px 0px #92ebff;
-    background-color: #92ebff;
+    box-shadow: 0 0 15px 0px ${props => props.highlightColor};
+    background-color: ${props => props.highlightColor};
     transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out;
   }
 `

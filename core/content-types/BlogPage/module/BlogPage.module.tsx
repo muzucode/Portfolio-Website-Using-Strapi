@@ -23,7 +23,7 @@ export default function BlogPage(props: IBlogPage) {
     title: 'header',
     children: (
       <>
-        <Link href="/about">
+        <Link href="/">
           <a className='exit'>HOME</a>
         </Link>
       </>

@@ -27,12 +27,25 @@ export default function Bubble(props: IBubble) {
 
   return (
 		<>
-			<Container className='bubble' onClick={() => showBubbleInfo()}/>
+			<Container bsColor={props.data.attributes.color_background} className='bubble' onClick={() => showBubbleInfo()}/>
 			<BubbleInfo {...bubbleInfoProps}/>
 		</>
   )
 }
 
-const Container = styled.div`
-/* border: 5px solid red; */
+interface IContainer {
+	bsColor: string
+}
+const Container = styled.div<IContainer>`
+	
+	transform: scale(1);
+	box-shadow: 0 0 0px ${props => props.bsColor};
+	transition: transform .2s ease-in-out, box-shadow .4s ease-in-out;
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.05);
+		box-shadow: 0 0 30px ${props => props.bsColor};
+		transition: transform .2s ease-in-out, box-shadow .3s ease-in-out;
+	}
+	
 `
