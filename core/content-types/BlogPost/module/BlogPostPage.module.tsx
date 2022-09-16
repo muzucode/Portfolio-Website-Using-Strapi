@@ -1,8 +1,7 @@
 import React from 'react'
 import CTLayout, { ICTLayout } from '../../../shared/Components/CTLayout/CTLayout';
-import CTWrapper from '../../../shared/Components/CTWrapper/CTWrapper';
-import { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
+import BackToPage from '../components/BackToPage';
 import Body from '../components/Body';
 import Hero from '../components/Hero';
 import { IMetaBlock } from '../components/MetaBlock/interfaces/IMetaBlock';
@@ -11,6 +10,13 @@ import Title from '../components/Title';
 import { IBlogPost } from '../interfaces/IBlogPost';
 
 export default function BlogPostPage(props: IBlogPost) {
+  // Data
+  const metaBlockData: IMetaBlock =  {
+    publishedAt: props.data.attributes.publishedAt,
+    authors: props.data.attributes.authors,
+    score: props.data.attributes.score,
+    tags: props.data.attributes.tags
+  }
 
   // Regions
   const RegionHero: IRegion = {
@@ -23,16 +29,12 @@ export default function BlogPostPage(props: IBlogPost) {
         }/>
     )
   }
-  const metaBlockData: IMetaBlock =  {
-    publishedAt: props.data.attributes.publishedAt,
-    authors: props.data.attributes.authors,
-    score: props.data.attributes.score,
-    tags: props.data.attributes.tags
-  }
+
   const RegionContent: IRegion = {
     title: 'content',
     children: (
       <>
+        <BackToPage text='Back' location='/blog'/>
         <Title content={props.data.attributes.title}/>
         <MetaBlock {...metaBlockData}></MetaBlock>
         <Body content={props.data.attributes.body}/>

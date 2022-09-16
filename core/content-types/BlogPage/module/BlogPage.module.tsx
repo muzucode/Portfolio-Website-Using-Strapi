@@ -8,6 +8,7 @@ import BlogPageTagsBlock from '../components/BlogPageTagsBlock';
 import Context from '@mui/base/TabsUnstyled/TabsContext';
 import { BlogPageContext, IBlogPageContext } from '../contexts/BlogPageContext';
 import { IBlogPostTags } from '../interfaces/IBlogPostTags';
+import BackToPage from '../../BlogPost/components/BackToPage';
 
 export default function BlogPage(props: IBlogPage) {
 
@@ -23,9 +24,6 @@ export default function BlogPage(props: IBlogPage) {
     title: 'header',
     children: (
       <>
-        <Link href="/">
-          <a className='exit'>HOME</a>
-        </Link>
       </>
     )
   }
@@ -34,6 +32,7 @@ export default function BlogPage(props: IBlogPage) {
     children: (
       <>
         <BlogPageContext.Provider value={{highlightedTags, setHighlightedTagsCtx}}>
+          <BackToPage text='Home' location='/'/>
           <BlogPosts {...props.data.blogPageData.data.attributes.blog_posts}></BlogPosts>
           <BlogPageTagsBlock {...props.data.tagsData}></BlogPageTagsBlock>
         </BlogPageContext.Provider>
