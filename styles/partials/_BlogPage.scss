@@ -36,6 +36,8 @@
               flex-direction: column;
               text-align: left;
               position: relative;
+              transform: translateX(0);
+              transition: color .2s ease-in, transform .2s ease-in-out;
               .text-container {
                 width: fit-content;
                 height: fit-content;

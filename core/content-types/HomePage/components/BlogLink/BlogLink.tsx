@@ -5,6 +5,6 @@ import styles from './BlogLink.module.scss'
 
 export default function BlogLink(props: IBlogLink) {
   return (
-    <a className={styles.link} href='/blog'>Check out my blog &#10154;</a>
+    <a className={styles.link} href='/blog'>Blog &rarr;</a>
   )
 }

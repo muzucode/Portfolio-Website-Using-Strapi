@@ -10,7 +10,7 @@ export default function BubbleInfo(props: IBubbleInfo) {
     className={`${props.isVisible ? 'visible' : 'hidden'} bubble-info`}
     bgColor={props.data.attributes.color_background}
     textColor={props.data.attributes.color_text}>
-      <Content>
+      <Content linkGlowColor={props.data.attributes.color_text}>
         <Title>{props.data.attributes.name}</Title>
         <ShortDescription dangerouslySetInnerHTML={mu(props.data.attributes.description)}></ShortDescription>
       </Content>
@@ -44,27 +44,45 @@ const Container = styled.div<IContainer>`
     height: 100%;
     transition: height 1.2s ease-in-out;
   }
-  h1, h2, p {
+  * {
     color: ${props => {
       return props.textColor
     }};
   }
 `
 
-const Content = styled.div`
+interface IContent {
+  linkGlowColor: string
+}
+const Content = styled.div<IContent>`
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 0px 0;
   max-width: 1300px;
-  p, h2 {
+  p {
     margin: 0;
+  }
+  h2:first-of-type {
+    margin: 0;
+  }
+  h2 {
+    margin: 20px 0 0;
+  }
+  a {
+    text-decoration: underline;
+    text-shadow: 0 0 0 ${props => props.linkGlowColor};
+    &:hover {
+      text-shadow: 0 0 15px ${props => props.linkGlowColor};
+      transition: text-shadow .2s ease-in-out;
+    }
   }
 `
 
 const Title = styled.h1`
   font-size: 200px;
-  margin: 0;
+  margin: 60px 0 0;
   position: relative;
   left: -13px;
+  /* border: 1px solid yellow; */
 `
 
 const Subtitle = styled.h2`

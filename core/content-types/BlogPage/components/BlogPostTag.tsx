@@ -53,6 +53,11 @@ interface IContainer {
   colors: IColors
 }
 const Container = styled.div<IContainer>`
+  transition: 
+    color .2s ease-in-out, 
+    background-color .2s ease-in-out,
+    transform .2s ease-in-out,
+    box-shadow .2s ease-in-out;
   &:hover, &.highlighted {
     cursor: pointer;
     color: ${ props => props.colors.primary };
@@ -63,6 +68,6 @@ const Container = styled.div<IContainer>`
       color .2s ease-in-out, 
       background-color .2s ease-in-out,
       transform .2s ease-in-out,
-      box-shadow .2s ease-in-out
+      box-shadow .2s ease-in-out;
   }
 `
