@@ -1,7 +1,5 @@
 import { NextPage } from 'next';
-import Router, { useRouter } from 'next/router'
 import React from 'react'
-import { IBlogPost } from '../../../core/content-types/BlogPost/interfaces/IBlogPost';
 import BlogPostPage from '../../../core/content-types/BlogPost/module/BlogPostPage.module';
 import { ax } from '../../../core/utility/Axios';
 import { enableImages } from '../../../core/utility/Markup';
@@ -21,14 +19,9 @@ export async function getStaticPaths() {
     paths: [
       { params: { pid: '1' } }, 
       { params: { pid: '2' } },
-      { params: { pid: '3' } },
-      { params: { pid: '4' } },
       { params: { pid: '6' } },
-      { params: { pid: '7' } },
       { params: { pid: '8' } },
       { params: { pid: '9' } },
-      { params: { pid: '10' } },
-      { params: { pid: '11' } },
     ],
     fallback: false, // can also be true or 'blocking'
   }
