@@ -1,33 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function VideoBackground() {
+
+
+interface IVideoBackground {
+  children: React.ReactNode;
+}
+export default function VideoBackground(props: IVideoBackground) {
   return (
     <>
-      <Video autoPlay muted loop>
-        <source src={'/assets/bg-video.mp4'} type="video/mp4"/>
-      </Video>
-
-      <VideoOverlay/>
+      <VideoContainer>
+        <Video autoPlay muted loop>
+          <source src={'/assets/bg-video.mp4'} type="video/mp4"/>
+        </Video>
+        {props.children}
+      </VideoContainer>
     </>
   )
 }
 
-const Video = styled.video`
-	z-index: 0;
-	position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
+const VideoContainer = styled.div`
+  display: block;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+
+  &::before {
+    opacity: .1;
+    background-color: #fff;
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 `
 
-const VideoOverlay = styled.div`
-	position: absolute;
-	z-index: 2;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #FFF;
-	opacity: .1;
-	`
+const Video = styled.video`
+  position: absolute;
+  width: 100vw;
+`

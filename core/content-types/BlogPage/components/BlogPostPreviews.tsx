@@ -27,5 +27,4 @@ const Container = styled(CFC)`
   left: calc(50% - 250px);
   top: 200px;
   height: fit-content;
-  
 `

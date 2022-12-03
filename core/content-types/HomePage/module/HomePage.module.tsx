@@ -1,10 +1,14 @@
 import React from 'react'
+import styled from 'styled-components';
 import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
+import { CFC } from '../../../shared/StyledComponents/StyledComponents';
 import BlogLink from '../components/BlogLink/BlogLink';
 import Bubbles from '../components/Bubbles';
+import LayerDivider from '../components/LayerDivider';
 import NameAndTitle from '../components/NameAndTitle';
 import VideoBackground from '../components/VideoBackground';
+import WavyLayer from '../components/WavyLayer';
 import { IHomePage } from '../interfaces/IHomePage';
 
 // IHomePage is really just the JSON response of a Bubbles request.
@@ -24,11 +28,13 @@ export default function HomePage(props: IHomePage) {
   const RegionContent: IRegion = {
     title: 'content',
     children: (
-      <>
-        <VideoBackground/>
+      <CFC>
+        <VideoBackground>
+          <Bubbles data={props.data.data.attributes.bubbles.data}/> 
+        </VideoBackground>
         <NameAndTitle/>
-        <Bubbles data={props.data.data.attributes.bubbles.data}/>
-      </>
+        <WavyLayer/>
+      </CFC>
     )
   }
   const RegionFooter: IRegion = {
@@ -59,3 +65,7 @@ export default function HomePage(props: IHomePage) {
     </div>
   )
 }
+
+const FlexColumn = styled(CFC)`
+  
+`

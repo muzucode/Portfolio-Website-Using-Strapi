@@ -14,7 +14,7 @@ const NameContainer = styled.div`
 	position: absolute;
 	bottom: 100px;
 	left: 180px;
-	z-index: 3;
+	z-index: 1;
 `
 const Name = styled.h1`
 	font-size: 200px;
