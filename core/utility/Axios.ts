@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const ax = axios.create({
-  baseURL: `${process.env.API_BASE_URL}`,
+  baseURL: `http://${process.env.HOST_IP}:3030/api`,
   timeout: 1000,
   headers: {
     'Authorization' : `Bearer ${process.env.API_KEY}`
