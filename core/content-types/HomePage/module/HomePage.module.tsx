@@ -33,7 +33,7 @@ export default function HomePage(props: IHomePage) {
           <Bubbles data={props.data.data.attributes.bubbles.data}/> 
         </VideoBackground>
         <NameAndTitle/>
-        <WavyLayer/>
+        {/* <WavyLayer/> */}
       </CFC>
     )
   }
