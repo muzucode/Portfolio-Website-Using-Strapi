@@ -5,13 +5,14 @@ import styled from 'styled-components'
 
 interface IVideoBackground {
   children: React.ReactNode;
+  data: any
 }
 export default function VideoBackground(props: IVideoBackground) {
   return (
     <>
       <VideoContainer>
         <Video autoPlay muted loop>
-          <source src={'/assets/bg-video.mp4'} type="video/mp4"/>
+          <source src={`http://${process.env.NEXT_PUBLIC_ASSETS_LOCATION}${props['data']['data']['attributes']['background']['data']['attributes']['url']}`} type="video/mp4"/>
         </Video>
         {props.children}
       </VideoContainer>

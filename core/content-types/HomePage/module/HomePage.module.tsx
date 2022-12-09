@@ -29,7 +29,7 @@ export default function HomePage(props: IHomePage) {
     title: 'content',
     children: (
       <CFC>
-        <VideoBackground>
+        <VideoBackground data={props.data}>
           <Bubbles data={props.data.data.attributes.bubbles.data}/> 
         </VideoBackground>
         <NameAndTitle/>
