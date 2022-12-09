@@ -10,7 +10,7 @@ interface IHeroImage {
 export default function HeroImage(props: IHeroImage) {
   const data = props.content.data.attributes;
   return (
-    <Container className='hero-image' backgroundImage={`url(http://localhost:3030${data.url})`}/>
+    <Container className='hero-image' backgroundImage={`url(http://${process.env.ASSETS_LOCATION}${data.url})`}/>
   )
 }
 

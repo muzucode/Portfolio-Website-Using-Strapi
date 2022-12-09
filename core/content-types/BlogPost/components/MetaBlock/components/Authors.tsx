@@ -13,7 +13,7 @@ export default function Authors(props: AuthorsData) {
         props.content.data.map(author => {
           return (
             <div className='author'>
-              <img className='author__avatar' src={'http://localhost:3030' + author.attributes.avatar.data.attributes.url}/>
+              <img className='author__avatar' src={`http://${process.env.ASSETS_LOCATION}` + author.attributes.avatar.data.attributes.url}/>
               <h4 className='author__name'>{author.attributes.username}</h4>
             </div>
           )
