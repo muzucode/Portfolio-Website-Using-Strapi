@@ -12,7 +12,6 @@ const Home: NextPage = (data: any) => {
 }
 
 export async function getStaticProps() {
-
   let res = await ax.get(`/home-page?populate=deep`);
   let pageData = res.data;
 

@@ -7,7 +7,7 @@ interface IHero {
 export default function Hero(props: IHero) {
 
   // Set placeholder if no image in place
-  const background = props.url ? `http://${process.env.NEXT_PUBLIC_ASSETS_LOCATION}${props.url}` : '/assets/img-placeholder.jpg'
+  const background = props.url ? `${process.env.NEXT_PUBLIC_API_URI}${props.url}` : '/assets/img-placeholder.jpg'
   // Set styles
   const styles = {
     backgroundImage: `url(${background})`

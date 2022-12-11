@@ -12,7 +12,7 @@ export default function VideoBackground(props: IVideoBackground) {
     <>
       <VideoContainer>
         <Video autoPlay muted loop>
-          <source src={`http://${process.env.NEXT_PUBLIC_ASSETS_LOCATION}${props['data']['data']['attributes']['background']['data']['attributes']['url']}`} type="video/mp4"/>
+          <source src={`${process.env.NEXT_PUBLIC_API_URI}${props['data']['data']['attributes']['background']['data']['attributes']['url']}`} type="video/mp4"/>
         </Video>
         {props.children}
       </VideoContainer>
