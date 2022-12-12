@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 export default function NameAndTitle() {
   return (
-    <NameContainer>
-        <Name>Sean<br/>Hickey</Name>
-        <Subtitle>Web Application Developer</Subtitle>
+    <NameContainer className='name-container'>
+        <Name className='name'>Sean<br/>Hickey</Name>
+        <Subtitle className='subtitle'>Web Application Developer</Subtitle>
     </NameContainer>
   )
 }

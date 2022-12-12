@@ -8,7 +8,7 @@ export interface IRegion {
 export default function Region(props: IRegion) {
   return (
     <div className={classchain(['region', props.title])}>
-      <div className="wrap">
+      <div className="inner-region-wrapper">
         {props.children}
       </div>
     </div>

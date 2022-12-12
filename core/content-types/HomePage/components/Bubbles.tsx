@@ -25,7 +25,7 @@ export default function Bubbles(props: IBubblesData) {
 	
   return (
 		<>
-			<Container>
+			<Container className='bubbles'>
 				{renderBubbles()}
 				<BlogLink/>
 			</Container>

@@ -10,14 +10,13 @@ export default function BubbleInfo(props: IBubbleInfo) {
     className={`${props.isVisible ? 'visible' : 'hidden'} bubble-info`}
     bgColor={props.data.attributes.color_background}
     textColor={props.data.attributes.color_text}>
-      <Content linkGlowColor={props.data.attributes.color_text}>
-        <Title>{props.data.attributes.name}</Title>
-        <ShortDescription dangerouslySetInnerHTML={mu(props.data.attributes.description)}></ShortDescription>
+      <Content linkGlowColor={props.data.attributes.color_text} className='bubble-info__content'>
+        <Title className='bubble-info__content__title'>{props.data.attributes.name}</Title>
+        <ShortDescription className='bubble-info__content__description' dangerouslySetInnerHTML={mu(props.data.attributes.description)}></ShortDescription>
       </Content>
 
-
-
       <EscapeButton 
+      className='bubble-info__escape-button'
       onClick={() => props.toggleVisibility(false)}
       highlightColor={props.data.attributes.color_highlight}/>
     </Container>

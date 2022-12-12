@@ -1,9 +1,7 @@
 import React from 'react'
-import styled from 'styled-components';
 import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
 import Region, { IRegion } from '../../../shared/Components/Region/Region';
 import { CFC } from '../../../shared/StyledComponents/StyledComponents';
-import BlogLink from '../components/BlogLink/BlogLink';
 import Bubbles from '../components/Bubbles';
 import LayerDivider from '../components/LayerDivider';
 import NameAndTitle from '../components/NameAndTitle';
@@ -28,7 +26,7 @@ export default function HomePage(props: IHomePage) {
   const RegionContent: IRegion = {
     title: 'content',
     children: (
-      <CFC>
+      <CFC className='container'>
         <VideoBackground data={props.data}>
           <Bubbles data={props.data.data.attributes.bubbles.data}/> 
         </VideoBackground>
@@ -65,7 +63,3 @@ export default function HomePage(props: IHomePage) {
     </div>
   )
 }
-
-const FlexColumn = styled(CFC)`
-  
-`
