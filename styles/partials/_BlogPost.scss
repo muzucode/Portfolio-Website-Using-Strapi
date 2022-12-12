@@ -6,7 +6,7 @@
       max-width: 1200px; 
       .region {
         &__content {
-          .wrap {
+          .inner-region-wrapper {
             max-width: 900px;
             margin: 0 auto 0;
             padding: 0 0 100px 0;
@@ -73,7 +73,7 @@
           }
         }
         &__hero {
-          .wrap {
+          .inner-region-wrapper {
             .hero {
               height: 400px;
               width: 100%;
