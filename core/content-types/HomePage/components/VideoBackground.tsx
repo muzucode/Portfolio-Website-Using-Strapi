@@ -11,7 +11,7 @@ export default function VideoBackground(props: IVideoBackground) {
   return (
     <>
       <VideoContainer className='video-container'>
-        <Video className='video' autoPlay muted loop>
+        <Video className='video' autoPlay muted loop controlsList='nodownload'>
           <source src={`${process.env.NEXT_PUBLIC_API_URI}${props['data']['data']['attributes']['background']['data']['attributes']['url']}`} type="video/mp4"/>
         </Video>
         {props.children}
