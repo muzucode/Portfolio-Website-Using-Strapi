@@ -28,9 +28,9 @@ export default function HomePage(props: IHomePage) {
     children: (
       <CFC className='container'>
         <VideoBackground data={props.data}>
+          <NameAndTitle/>
           <Bubbles data={props.data.data.attributes.bubbles.data}/> 
         </VideoBackground>
-        <NameAndTitle/>
         {/* <WavyLayer/> */}
       </CFC>
     )
@@ -48,11 +48,11 @@ export default function HomePage(props: IHomePage) {
   const LayoutStandard: ILayout = {
     title: 'standard',
     regions: (
-      <>
+      <div className='home-page'>
         <Region {...RegionHero}/>
         <Region {...RegionContent}/>
         <Region {...RegionFooter}/>
-      </>
+      </div>
     )
   }
 

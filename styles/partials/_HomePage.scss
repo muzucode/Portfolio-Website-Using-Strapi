@@ -1,0 +1,181 @@
+.home-page {
+  .name-container {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    height: 60px;
+    width: 100%;
+    // border: 2px solid red;
+    top: 10px;
+    @include md {
+      top: 410px;
+      left: 80px;
+    }        
+    @include lg {
+      left: 120px;
+    }    
+    @include xl {
+      left: 220px;
+    }
+    .name {
+      font-size: 40px;
+      color: white;
+      line-height: 50px;
+      margin: 0;
+      text-align: center;
+      br {
+        display: none;
+        @include md {
+          display: block;
+        }
+      }
+      @include md {
+        font-size: 150px;
+        line-height: 130px;
+        text-align: start;
+      }      
+      @include lg {
+        font-size: 200px;
+        line-height: 180px;
+        margin: 0;
+      }
+  
+    }
+    .subtitle {
+      position: relative; 
+      color: #fff;
+      font-style: italic;
+      font-size: 15px;
+      text-align: center;
+      margin: -10px 0 0;
+      @include md {
+        margin: -20px 0 0;
+        left: 9px;
+        color: #fff;
+        font-style: italic;
+        font-size: 30px;
+        width: fit-content;
+        text-align: start;
+      }
+    }
+  }
+  .bubbles {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    // border: 5px solid green;
+    height: fit-content;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    justify-content: center;
+    top: 80px;
+    @include md {
+      position: absolute;
+      right: -5%;
+      height: 100vh;
+      width: 100%;
+      z-index: 3;
+      top: 0;
+    }
+    .bubble {
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 75px;
+      height: 75px;
+      display: flex;
+      margin: 5px;
+      @include md {
+        position: absolute;
+      }
+      &:nth-of-type(1) {
+        background-image: url(/assets/img-nextjs.png);
+        @include md {
+          left: 33vw;
+          top: 10vh;
+          width: 150px;
+          height: 150px;
+        }
+        @include xl {
+          width: 200px;
+          height: 200px;
+        }      
+  
+      }    
+      &:nth-of-type(3) {
+        background-image: url(/assets/img-strapi-logo.webp);
+        @include md {
+          left: 46vw;
+          top: 30vh;
+          width: 125px;
+          height: 125px;
+        }
+        @include xl {
+          left: 46vw;
+          top: 30vh;
+          width: 175px;
+          height: 175px;
+        }      
+  
+  
+      }
+      &:nth-of-type(5) {
+        background-image: url(/assets/img-react-typescript-logo.png);
+        background-size: 120%;
+        @include md {
+          left: 58vw;
+          top: 47vh;
+          width: 100px;
+          height: 100px;
+        }
+        @include xl {
+          left: 58vw;
+          top: 47vh;
+          width: 150px;
+          height: 150px;
+        }      
+  
+  
+  
+      }    
+      &:nth-of-type(7) {
+        background-image: url(/assets/img-go-logo.png);
+        @include md {
+          left: 70vw;
+          top: 60vh;
+          width: 75px;
+          height: 75px;
+        }
+        @include xl {
+          left: 70vw;
+          top: 60vh;
+          width: 125px;
+          height: 125px;
+        }      
+  
+  
+      }
+      &:nth-of-type(9) {
+        background-image: url(/assets/img-aws-logo.png);  
+        @include md {
+          left: 81vw;
+          top: 71vh;
+          width: 50px;
+          height: 50px;
+        }
+        @include xl {
+          left: 81vw;
+          top: 71vh;
+          width: 100px;
+          height: 100px;
+        }      
+  
+  
+      }
+    }
+  }
+}

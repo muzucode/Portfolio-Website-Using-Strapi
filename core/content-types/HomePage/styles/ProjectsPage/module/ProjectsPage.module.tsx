@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout, { ILayout } from '../../../shared/Components/Layout/Layout';
-import Region, { IRegion } from '../../../shared/Components/Region/Region';
+import Layout, { ILayout } from '../../../../../shared/Components/Layout/Layout';
+import Region, { IRegion } from '../../../../../shared/Components/Region/Region';
 import Body from '../components/Body';
 import HeroImage from '../components/HeroImage';
 import ProjectBlocks from '../components/ProjectBlocks';

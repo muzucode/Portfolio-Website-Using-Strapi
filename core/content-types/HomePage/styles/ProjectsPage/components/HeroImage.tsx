@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { C } from '../../../shared/StyledComponents/StyledComponents';
-import { IImage } from '../../../shared/Interfaces/Image/IImage'
+import { C } from '../../../../../shared/StyledComponents/StyledComponents';
+import { IImage } from '../../../../../shared/Interfaces/Image/IImage'
 
 
 interface IHeroImage {

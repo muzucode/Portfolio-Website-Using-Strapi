@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { C } from '../../../shared/StyledComponents/StyledComponents'
-import { skewer } from '../../../utility/TagsParser'
+import { C } from '../../../../../shared/StyledComponents/StyledComponents'
+import { skewer } from '../../../../../utility/TagsParser'
 import { IProjectBlock } from '../interfaces/IProjectBlock'
 
 export default function ProjectBlock(props: IProjectBlock) {

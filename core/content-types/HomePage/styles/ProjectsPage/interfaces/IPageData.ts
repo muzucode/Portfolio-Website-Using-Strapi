@@ -1,4 +1,4 @@
-import { IImage } from "../../../shared/Interfaces/Image/IImage"
+import { IImage } from "../../../../../shared/Interfaces/Image/IImage"
 import { IProjectBlock } from "./IProjectBlock"
 
 export interface IPageData {

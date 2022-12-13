@@ -22,8 +22,8 @@ export default function VideoBackground(props: IVideoBackground) {
 
 const VideoContainer = styled.div`
   display: block;
-  position: relative;
-  height: 100vh;
+  position: fixed;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 
@@ -42,6 +42,9 @@ const VideoContainer = styled.div`
 `
 
 const Video = styled.video`
-  position: absolute;
-  width: 100vw;
+position: absolute;
+    height: 100%;
+    width: 177.77777778vh; /* 100 * 16 / 9 */
+    min-width: 100%;
+    min-height: 56.25vw; /* 100 * 9 / 16 */
 `

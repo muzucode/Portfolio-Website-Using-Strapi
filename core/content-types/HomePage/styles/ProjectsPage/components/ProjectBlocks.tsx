@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { C } from '../../../shared/StyledComponents/StyledComponents'
+import { C } from '../../../../../shared/StyledComponents/StyledComponents'
 import { IProjectBlock } from '../interfaces/IProjectBlock'
 import ProjectBlock from './ProjectBlock'
 
