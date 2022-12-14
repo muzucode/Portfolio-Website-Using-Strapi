@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface Thumbnail {
     name: string;
     hash: string;
@@ -92,6 +94,7 @@ export interface IBubbleData {
 
 export interface IBubblesData {
     data: IBubbleData[];
+    children: React.ReactNode;
 }
 
 export interface Attributes {

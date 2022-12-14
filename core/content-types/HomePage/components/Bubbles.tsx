@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { IBubble } from '../interfaces/IBubble';
 import { IBubblesData } from '../interfaces/IHomePage';
 import BlogLink from './BlogLink/BlogLink';
 import Bubble from './Bubble';
@@ -26,6 +25,9 @@ export default function Bubbles(props: IBubblesData) {
   return (
 		<>
 			<div className='bubbles'>
+				<div className='mobile-content'>
+					<div></div>
+				</div>
 				{renderBubbles()}
 				<BlogLink/>
 			</div>

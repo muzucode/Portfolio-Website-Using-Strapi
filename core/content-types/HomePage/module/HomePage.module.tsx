@@ -29,7 +29,9 @@ export default function HomePage(props: IHomePage) {
       <CFC className='container'>
         <VideoBackground data={props.data}>
           <NameAndTitle/>
-          <Bubbles data={props.data.data.attributes.bubbles.data}/> 
+          <Bubbles data={props.data.data.attributes.bubbles.data}>
+            <span>sean</span>
+          </Bubbles> 
         </VideoBackground>
         {/* <WavyLayer/> */}
       </CFC>
