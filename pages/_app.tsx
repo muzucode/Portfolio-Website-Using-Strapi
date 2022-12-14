@@ -9,9 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="/path/to/styles/default.min.css"/>
-      </Head>
+      <Head></Head>
       {/* <Header></Header> */}
       <Component {...pageProps} />
     </>

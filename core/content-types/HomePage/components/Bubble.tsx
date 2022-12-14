@@ -16,8 +16,8 @@ export default function Bubble(props: IBubble) {
 	}
 	const showBubbleInfo = () => {
 		setVisibility(true);
-		console.log('clicked here');
-		console.log(isVisible);
+		// console.log('clicked here');
+		// console.log(isVisible);
 	}
 	const bubbleInfoProps: IBubbleInfo = {
 		isVisible: isVisible,
@@ -25,22 +25,31 @@ export default function Bubble(props: IBubble) {
 		data: props.data
 	}
 
+	const bgImgURI = props.data.attributes.bubble_image.data.attributes.url;
+	const bsColor = props.data.attributes.color_background;
+	const bubbleName = props.data.attributes.name;
+	const iconBgColor = props.data.attributes.icon_background_color ? props.data.attributes.icon_background_color: '#323232';
+
   return (
 		<>
-			<Container bsColor={props.data.attributes.color_background} className='bubble' onClick={() => showBubbleInfo()}/>
+			<Container iconBgColor={iconBgColor} bgImgURI={bgImgURI} bsColor={bsColor} className='bubble' id={bubbleName} onClick={() => showBubbleInfo()}/>
 			<BubbleInfo {...bubbleInfoProps}/>
 		</>
   )
 }
 
 interface IContainer {
-	bsColor: string
+	bsColor: string,
+	bgImgURI: string,
+	iconBgColor: string,
 }
 const Container = styled.div<IContainer>`
 	
 	transform: scale(1);
 	box-shadow: 0 0 0px ${props => props.bsColor};
 	transition: transform .2s ease-in-out, box-shadow .4s ease-in-out;
+	background-image: url(${props => process.env.NEXT_PUBLIC_API_URI + props.bgImgURI});
+	background-color: ${props => props.iconBgColor};
 	&:hover {
 		cursor: pointer;
 		transform: scale(1.05);

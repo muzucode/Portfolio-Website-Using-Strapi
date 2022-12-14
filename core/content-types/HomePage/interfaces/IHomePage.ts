@@ -83,6 +83,7 @@ export interface Attributes2 {
     color_background: string;
     color_text: string;
     color_highlight: string;
+    icon_background_color: string;
     bubble_image: BubbleImage;
     projects: Projects;
 }

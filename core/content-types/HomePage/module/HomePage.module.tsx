@@ -14,7 +14,7 @@ import { IHomePage } from '../interfaces/IHomePage';
 // as interfaces.
 
 export default function HomePage(props: IHomePage) {
-  console.log(props.data.data.attributes.bubbles);
+  // console.log(props.data.data.attributes.bubbles);
   // Regions
   const RegionHero: IRegion = {
     title: 'hero',

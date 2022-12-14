@@ -4,7 +4,7 @@ import { ax } from "../core/utility/Axios";
 
 const Home: NextPage = (data: any) => {
  
-  console.log(data)
+  // console.log(data)
 
   return (
     <HomePage {...data}/>

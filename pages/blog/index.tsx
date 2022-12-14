@@ -8,7 +8,7 @@ import { ax } from "../../core/utility/Axios";
 
 const Blog: NextPage = (data: any) => {
  
-  console.log(data)
+  // console.log(data)
 
   return (
     <BlogPage {...data}/>

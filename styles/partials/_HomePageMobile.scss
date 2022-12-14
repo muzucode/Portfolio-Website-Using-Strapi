@@ -61,26 +61,6 @@
         height: 75px;
         display: flex;
         margin: 5px;
-        &:nth-child(1) {
-          background-image: url(/assets/img-nextjs.png); 
-        }    
-        &:nth-child(3) {
-          background-image: url(/assets/img-strapi-logo.webp);   
-        }
-        &:nth-child(5) {
-          background-image: url(/assets/img-react-typescript-logo.png);
-          background-size: 120%;  
-        }    
-        &:nth-child(7) {
-          background-image: url(/assets/img-go-logo.png);
-        }
-        &:nth-child(9) {
-          background-image: url(/assets/img-aws-logo.png);   
-        }        
-        &:nth-child(11) {
-          background-color: rgb(39, 39, 39);
-          background-image: url(/assets/img-python-logo.png);   
-        }
       }
     }
   }

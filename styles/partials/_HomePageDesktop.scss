@@ -5,7 +5,7 @@
       @include md {
         display: block;
       }
-      
+
       box-sizing: border-box;
       position: absolute;
       z-index: 1;
@@ -100,7 +100,6 @@
           position: absolute;
         }
         &:nth-child(1) {
-          background-image: url(/assets/img-nextjs.png);
           @include md {
             left: 37vw;
             top: 10vh;
@@ -114,7 +113,6 @@
     
         }    
         &:nth-child(3) {
-          background-image: url(/assets/img-strapi-logo.webp);
           @include md {
             left: 50vw;
             top: 30vh;
@@ -131,7 +129,6 @@
     
         }
         &:nth-child(5) {
-          background-image: url(/assets/img-react-typescript-logo.png);
           background-size: 120%;
           @include md {
             left: 62vw;
@@ -150,7 +147,6 @@
     
         }    
         &:nth-child(7) {
-          background-image: url(/assets/img-go-logo.png);
           @include md {
             left: 74vw;
             top: 60vh;
@@ -167,7 +163,6 @@
     
         }
         &:nth-child(9) {
-          background-image: url(/assets/img-aws-logo.png);  
           @include md {
             left: 85vw;
             top: 71vh;

@@ -22,7 +22,7 @@ export default function BlogPostTag(props: IBlogPostTag) {
 
       // console.log(props);
       // console.log(tags.data);
-      console.log('Tag: ' + props.attributes.title + ' | Is active: ' + isActive);
+      // console.log('Tag: ' + props.attributes.title + ' | Is active: ' + isActive);
 
       return isActive
     }

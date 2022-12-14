@@ -16,7 +16,7 @@ export default function BlogPage(props: IBlogPage) {
   const [highlightedTags, setHighlightedTags] = useState<IBlogPageContext['highlightedTags']>(null);
   const setHighlightedTagsCtx: IBlogPageContext['setHighlightedTagsCtx'] = (value) => {
     setHighlightedTags(value);
-    console.log(highlightedTags)
+    // console.log(highlightedTags)
   }
 
   // Regions
