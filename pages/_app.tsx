@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head></Head>
+      <Head>
+        
+      </Head>
       {/* <Header></Header> */}
       <Component {...pageProps} />
     </>
