@@ -14,6 +14,7 @@ export const CF = styled.div`
   display: flex;
 `
 export const CFC = styled.div`
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   display: flex;

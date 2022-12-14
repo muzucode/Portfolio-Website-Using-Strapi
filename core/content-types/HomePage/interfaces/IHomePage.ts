@@ -94,7 +94,6 @@ export interface IBubbleData {
 
 export interface IBubblesData {
     data: IBubbleData[];
-    children: React.ReactNode;
 }
 
 export interface Attributes {

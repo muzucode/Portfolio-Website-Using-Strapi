@@ -25,9 +25,6 @@ export default function Bubbles(props: IBubblesData) {
   return (
 		<>
 			<div className='bubbles'>
-				<div className='mobile-content'>
-					<div></div>
-				</div>
 				{renderBubbles()}
 				<BlogLink/>
 			</div>

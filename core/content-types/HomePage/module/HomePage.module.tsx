@@ -14,7 +14,7 @@ import { IHomePage } from '../interfaces/IHomePage';
 // as interfaces.
 
 export default function HomePage(props: IHomePage) {
-  
+  console.log(props.data.data.attributes.bubbles);
   // Regions
   const RegionHero: IRegion = {
     title: 'hero',
@@ -27,12 +27,15 @@ export default function HomePage(props: IHomePage) {
     title: 'content',
     children: (
       <CFC className='container'>
-        <VideoBackground data={props.data}>
+        <VideoBackground data={props.data}/>
+        <div className='homepage-mobile'>
           <NameAndTitle/>
-          <Bubbles data={props.data.data.attributes.bubbles.data}>
-            <span>sean</span>
-          </Bubbles> 
-        </VideoBackground>
+          <Bubbles data={props.data.data.attributes.bubbles.data}/>
+        </div>
+        <div className='homepage-desktop'>
+          <NameAndTitle/>
+          <Bubbles data={props.data.data.attributes.bubbles.data}/>
+        </div>
         {/* <WavyLayer/> */}
       </CFC>
     )

@@ -1,0 +1,87 @@
+.home-page {
+
+  .homepage-mobile {
+    display: block;
+    @include md {
+      display: none;
+    }
+    width: 100%;
+    // border: 2px solid red;
+    // background-color: #888;
+    .name-container {
+      display: block;
+      width: 100%;
+      // border: 2px solid red;
+      padding: 20px 0;
+      .name {
+        font-size: 40px;
+        color: white;
+        line-height: 50px;
+        margin: 0;
+        text-align: center;
+        br {
+          display: none;
+        }
+      }
+      .subtitle {
+        position: relative; 
+        color: #fff;
+        font-style: italic;
+        font-size: 15px;
+        text-align: center;
+        margin: -10px 0 0;
+        @include md {
+          margin: -20px 0 0;
+          left: 9px;
+          color: #fff;
+          font-style: italic;
+          font-size: 30px;
+          width: fit-content;
+          text-align: start;
+        }
+      }
+    }
+    .bubbles {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      height: fit-content;
+      width: 100%;
+      flex-wrap: wrap;
+      padding: 0 10px;
+      justify-content: center;
+      // display: none; 
+      .bubble {
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 75px;
+        height: 75px;
+        display: flex;
+        margin: 5px;
+        &:nth-child(1) {
+          background-image: url(/assets/img-nextjs.png); 
+        }    
+        &:nth-child(3) {
+          background-image: url(/assets/img-strapi-logo.webp);   
+        }
+        &:nth-child(5) {
+          background-image: url(/assets/img-react-typescript-logo.png);
+          background-size: 120%;  
+        }    
+        &:nth-child(7) {
+          background-image: url(/assets/img-go-logo.png);
+        }
+        &:nth-child(9) {
+          background-image: url(/assets/img-aws-logo.png);   
+        }        
+        &:nth-child(11) {
+          background-color: rgb(39, 39, 39);
+          background-image: url(/assets/img-python-logo.png);   
+        }
+      }
+    }
+  }
+}

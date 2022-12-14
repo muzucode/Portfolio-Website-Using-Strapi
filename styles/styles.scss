@@ -8,4 +8,10 @@
 @import './partials/ProjectsPage';
 @import './partials/BlogPost';
 @import './partials/BlogPage';
-@import './partials/HomePage'
+@import './partials/HomePageDesktop';
+@import './partials/HomePageMobile';
+@import './partials/HomePageVideoBackground';
+
+* {
+  box-sizing: border-box !important;
+}
