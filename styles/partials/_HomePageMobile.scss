@@ -11,11 +11,10 @@
       display: block;
       width: 100%;
       background-color: $blue-1;
-      padding: 20px 0 10px;
+      padding: 5px 0;
       .name {
-        font-size: 60px;
+        font-size: 30px;
         color: white;
-        line-height: 50px;
         margin: 0;
         text-align: center;
         br {
@@ -26,9 +25,9 @@
         position: relative; 
         color: #fff;
         font-style: italic;
-        font-size: 20px;
+        font-size: 14px;
         text-align: center;
-        margin: 10px 0 0;
+        margin: 0;
       }
     }
     .bubbles {
@@ -50,47 +49,43 @@
         display: flex;
         margin: 5px;
       }
+      .blog-link {
+        display: none;
+      }
     }
     .section {
-      padding: 10px;
       &#portrait {
-        // background: red;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        padding: 20px;
         .half {
           display: flex;
           flex: 1;
           align-items: center;
           justify-content: center;
-          // border: 1px solid red;
+          margin: 30px 0;
           &:nth-of-type(1) {
             img {
               margin: 0 auto;
-              width: 80%;
+              width: 60%;
               border-radius: 50%;
               border: 2px solid white;
             }
           }          
           &:nth-of-type(2) {
             flex-direction: column;
+            margin: 0 30px 30px;
+            border-radius: 10px;
+            background-color: #fff;
             .content {
               p {
-                font-size: 12px;
-                line-height: 22px;
-                color: #fff;
+                font-size: 16px;
+                line-height: 24px;
+                color: #000;
                 margin: 0;
                 &#quote {
-
-                }
-                &#author {
-                  font-style: italic;
-                  font-size: 16px;
-                  position: relative;
-                  text-align: right;
-                  right: 20px;
-                  padding: 10px 0 0;
+                  padding: 20px;
+                  // background-color: #fff;
                 }
               }
             }
@@ -98,6 +93,7 @@
         }
       }
       &#technologies {
+        padding: 0 30px 30px;
         background: $blue-1;
       }
     }
@@ -106,7 +102,7 @@
       text-align: center;
       margin: 0;
       color: rgb(255, 255, 255);
-      // padding: 10px;
+      padding: 20px 0 10px;
       font-size: 22px;
     }
   }
