@@ -40,7 +40,7 @@ export default function HomePage(props: IHomePage) {
               <div className='content'>
                 <h2>What's up!</h2>
                 <div className='divider'></div>
-                <p id='quote'>I'm a self-taught developer turned Computer Science grad student currently working as a full-stack dev in the industry.  I enjoy working within React, NextJS, and headless CMS domains.  Servers or <i>serverless</i>... I've been there and done that.  Keep scrolling to find out more!</p>
+                <p id='quote'>I'm a self-taught developer and CS grad student at Drexel University.  I currently work as a full-stack dev in the industryand enjoy working within React, NextJS, and headless CMS domains.  Keep scrolling to find out more!</p>
               </div>
             </div>
           </div>
