@@ -11,8 +11,8 @@ export default function BubbleInfo(props: IBubbleInfo) {
     bgColor={props.data.attributes.color_background}
     textColor={props.data.attributes.color_text}>
       <Content linkGlowColor={props.data.attributes.color_text} className='bubble-info__content'>
-        <Title className='bubble-info__content__title'>{props.data.attributes.name}</Title>
-        <ShortDescription className='bubble-info__content__description' dangerouslySetInnerHTML={mu(props.data.attributes.description)}></ShortDescription>
+        <h1 className='bubble-info__content__title'>{props.data.attributes.name}</h1>
+        <div className='bubble-info__content__description' dangerouslySetInnerHTML={mu(props.data.attributes.description)}></div>
       </Content>
 
       <EscapeButton 
@@ -28,32 +28,9 @@ interface IContainer {
   textColor: string
 }
 const Container = styled.div<IContainer>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background-color: ${props => {
-    return props.bgColor
-  }};  
-  z-index: 5;
-  transition: height 1.2s ease-in-out;
-  overflow: hidden;
-  &.visible {
-    height: 100%;
-    transition: height 1.2s ease-in-out;
-  }
+  background-color: ${props => props.bgColor};
   * {
-    color: ${props => {
-      return props.textColor
-    }};
-  }
-  &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    color: ${props => props.textColor}
   }
 `
 
@@ -61,60 +38,23 @@ interface IContent {
   linkGlowColor: string
 }
 const Content = styled.div<IContent>`
-  margin: 0 auto;
-  padding: 0px 0;
-  max-width: 1300px;
-  p {
-    margin: 0;
-  }
-  h2:first-of-type {
-    margin: 0;
-  }
-  h2 {
-    margin: 20px 0 0;
-  }
   a {
-    text-decoration: underline;
     text-shadow: 0 0 0 ${props => props.linkGlowColor};
     &:hover {
       text-shadow: 0 0 15px ${props => props.linkGlowColor};
-      transition: text-shadow .2s ease-in-out;
     }
   }
 `
 
-const Title = styled.h1`
-  font-size: 200px;
-  margin: 60px 0 0;
-  position: relative;
-  left: -13px;
-  /* border: 1px solid yellow; */
-`
-
-const Subtitle = styled.h2`
-  margin: 0;
-`
-const ShortDescription = styled.div`
-  margin: 0;
-`
 interface IEscapeButton {
   highlightColor: string
 }
 const EscapeButton = styled.div<IEscapeButton>`
-  width: 200px;
-  height: 30px;
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 100px);
-  border-radius: 40px 40px 0 0;
+  
   box-shadow: 0 0 0px 0px ${props => props.highlightColor};
-  background-color: #fff;
   transition: box-shadow 1.2s ease-in-out, background-color 1.2s ease-in-out;
   &:hover {
-    cursor: pointer;
     box-shadow: 0 0 15px 0px ${props => props.highlightColor};
     background-color: ${props => props.highlightColor};
-    transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out;
   }
 `
