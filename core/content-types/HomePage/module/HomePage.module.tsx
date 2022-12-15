@@ -30,7 +30,26 @@ export default function HomePage(props: IHomePage) {
         <VideoBackground data={props.data}/>
         <div className='homepage-mobile'>
           <NameAndTitle/>
-          <Bubbles data={props.data.data.attributes.bubbles.data}/>
+
+          {/* Portrait */}
+          <div className='section' id='portrait'>
+            <div className='half'>
+              <img src="/assets/img-sean.jpeg"/>
+            </div>            
+            <div className='half'>
+              <div className='content'>
+                <p id='quote'>Greetings, and welcome to my website!  I'm a self-taught web developer with extensive experience in full-stack web development.  I thoroughly enjoy working with TypeScript React, NextJS, and headless content-management domains.  I also get a kick out of all the neat cloud technologies at developers' disposal!  This site is hosted on AWS!</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Technologies */}
+          <div className='section' id='technologies'>
+            <h2 className='section-title'>Technologies</h2>
+            <Bubbles data={props.data.data.attributes.bubbles.data}/>
+          </div>
+
+
         </div>
         <div className='homepage-desktop'>
           <NameAndTitle/>

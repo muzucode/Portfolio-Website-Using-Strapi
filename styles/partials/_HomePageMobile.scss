@@ -6,15 +6,14 @@
       display: none;
     }
     width: 100%;
-    // border: 2px solid red;
-    // background-color: #888;
+    // padding: 0 30px;
     .name-container {
       display: block;
       width: 100%;
-      // border: 2px solid red;
-      padding: 20px 0;
+      background-color: $blue-1;
+      padding: 20px 0 10px;
       .name {
-        font-size: 40px;
+        font-size: 60px;
         color: white;
         line-height: 50px;
         margin: 0;
@@ -27,18 +26,9 @@
         position: relative; 
         color: #fff;
         font-style: italic;
-        font-size: 15px;
+        font-size: 20px;
         text-align: center;
-        margin: -10px 0 0;
-        @include md {
-          margin: -20px 0 0;
-          left: 9px;
-          color: #fff;
-          font-style: italic;
-          font-size: 30px;
-          width: fit-content;
-          text-align: start;
-        }
+        margin: 10px 0 0;
       }
     }
     .bubbles {
@@ -48,9 +38,7 @@
       height: fit-content;
       width: 100%;
       flex-wrap: wrap;
-      padding: 0 10px;
       justify-content: center;
-      // display: none; 
       .bubble {
         border: 2px solid #fff;
         border-radius: 50%;
@@ -62,6 +50,64 @@
         display: flex;
         margin: 5px;
       }
+    }
+    .section {
+      padding: 10px;
+      &#portrait {
+        // background: red;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        .half {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+          // border: 1px solid red;
+          &:nth-of-type(1) {
+            img {
+              margin: 0 auto;
+              width: 80%;
+              border-radius: 50%;
+              border: 2px solid white;
+            }
+          }          
+          &:nth-of-type(2) {
+            flex-direction: column;
+            .content {
+              p {
+                font-size: 12px;
+                line-height: 22px;
+                color: #fff;
+                margin: 0;
+                &#quote {
+
+                }
+                &#author {
+                  font-style: italic;
+                  font-size: 16px;
+                  position: relative;
+                  text-align: right;
+                  right: 20px;
+                  padding: 10px 0 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      &#technologies {
+        background: $blue-1;
+      }
+    }
+    h2.section-title {
+      font-family: $font-2;
+      text-align: center;
+      margin: 0;
+      color: rgb(255, 255, 255);
+      // padding: 10px;
+      font-size: 22px;
     }
   }
 }
