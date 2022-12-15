@@ -38,7 +38,9 @@ export default function HomePage(props: IHomePage) {
             </div>            
             <div className='half'>
               <div className='content'>
-                <p id='quote'>Greetings, and welcome to my website!  I'm a self-taught web developer with extensive experience in full-stack web development.  I thoroughly enjoy working with TypeScript React, NextJS, and headless content-management domains.  I also get a kick out of all the neat cloud technologies at developers' disposal!  This site is hosted on AWS!</p>
+                <h2>What's up!</h2>
+                <div className='divider'></div>
+                <p id='quote'>I'm a self-taught developer turned Computer Science grad student currently working as a full-stack dev in the industry.  I enjoy working within React, NextJS, and headless CMS domains.  Servers or <i>serverless</i>... I've been there and done that.  Keep scrolling to find out more!</p>
               </div>
             </div>
           </div>
