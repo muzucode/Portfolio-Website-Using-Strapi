@@ -88,17 +88,30 @@
 
       }
       &__escape-button {
+        position: absolute;
+        top: 50px;
+        right: 80px;
         width: 30px;
         height: 30px;
-        color: #fff;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: #fff;
-        transition: box-shadow 1.2s ease-in-out, background-color 1.2s ease-in-out;
         &:hover {
           cursor: pointer;
-          transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out;
+        }
+        &::before {
+          content: '';
+          width: 5px;
+          height: 100%;
+          left: 12px;
+          position: absolute;
+          transform: rotate(45deg);
+        }        
+        &::after {
+          content: '';
+          width: 5px;
+          height: 100%;
+          left: 12px;
+          color: #fff;
+          position: absolute;
+          transform: rotate(-45deg);
         }
       }
     }

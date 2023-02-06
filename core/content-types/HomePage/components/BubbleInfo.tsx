@@ -50,11 +50,16 @@ interface IEscapeButton {
   highlightColor: string
 }
 const EscapeButton = styled.div<IEscapeButton>`
-  
-  box-shadow: 0 0 0px 0px ${props => props.highlightColor};
-  transition: box-shadow 1.2s ease-in-out, background-color 1.2s ease-in-out;
-  &:hover {
-    box-shadow: 0 0 15px 0px ${props => props.highlightColor};
+  &::before, &::after {
     background-color: ${props => props.highlightColor};
+    box-shadow: 0 0 0px 0px ${props => props.highlightColor};
+    transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out;
+  }
+  &:hover {
+    &::before, &::after {
+      box-shadow: 0 0 7px 0px ${props => props.highlightColor};
+      background-color: ${props => props.highlightColor};
+    }
+
   }
 `
