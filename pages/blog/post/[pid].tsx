@@ -7,37 +7,48 @@ import { enableImages } from '../../../core/utility/Markup';
 
 
 const BlogPost: NextPage = (data: any) => {
-
+  
   return (
-    <BlogPostPage {...data.post}/>
+    <BlogPostPage {...data.props.post}/>
   )
   
 }
 
 // Generates `/posts/1` and `/posts/2`
 export async function getStaticPaths() {
+
+  let paths: {params: {pid : string, rawId: string}}[] = []
+  let posts = (await ax.get(`/blog-posts?populate=deep`)).data;
+  let i = 0;
+  posts['data'].forEach((post: any) => {
+    paths.push(
+      { 
+        params: { 
+          pid: `post-${i}`,
+
+          rawId: (post['id'] as number).toString(),
+        } 
+      }
+    )
+    i++;
+  });
+
   return {
-    paths: [
-      { params: { pid: '1' } }, 
-      { params: { pid: '2' } },
-      { params: { pid: '6' } },
-      { params: { pid: '8' } },
-      { params: { pid: '9' } },
-    ],
+    paths: paths,
     fallback: false, // can also be true or 'blocking'
   }
 }
 
 // `getStaticPaths` requires using `getStaticProps`
 interface StaticPropsParams {
-  params: { pid: string},
+  params: { pid: string, rawId: string},
   locales: any,
   locale: any,
   defaultLocale: any,
 }
 export async function getStaticProps(params: StaticPropsParams) {
 
-  let res = await ax.get(`/blog-posts/${params.params.pid}?populate=deep`);
+  let res = await ax.get(`/blog-posts/${params.params.rawId}?populate=deep`);
   let pageData = res.data;
   pageData['data']['attributes']['body'] = enableImages(pageData['data']['attributes']['body'])
 
@@ -45,6 +56,10 @@ export async function getStaticProps(params: StaticPropsParams) {
     // Passed to the page component as props
     props: { post: pageData },
   }
+}
+
+export async function loadPosts() {
+
 }
 
 export default BlogPost
