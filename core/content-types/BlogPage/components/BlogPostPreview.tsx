@@ -11,7 +11,7 @@ export default function BlogPostPreview(props: IBlogPost) {
     <BlogPageContext.Consumer>
       {value => {
         return (
-          <Link href={`/blog/post/${props.id}`}>
+          <a href={`/blog/post/${encodeURI(props.attributes.title).replace(/%/g, '%25')}`}>
             <div 
             className={`blog-post-preview blog-post-preview__${skewer(props.attributes.title)}`}
             onMouseOver={() => value?.setHighlightedTagsCtx(props.attributes.tags)} 
@@ -22,7 +22,7 @@ export default function BlogPostPreview(props: IBlogPost) {
                 <div className='underline'></div>
               </div>
             </div>
-          </Link>
+          </a>
         )
       }}
 

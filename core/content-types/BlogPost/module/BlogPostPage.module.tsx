@@ -9,13 +9,13 @@ import MetaBlock from '../components/MetaBlock/module/MetaBlock.module';
 import Title from '../components/Title';
 import { IBlogPost } from '../interfaces/IBlogPost';
 
-export default function BlogPostPage(props: IBlogPost) {
+export default function BlogPostPage(props: any) {
   // Data
   const metaBlockData: IMetaBlock =  {
-    publishedAt: props.data.attributes.publishedAt,
-    authors: props.data.attributes.authors,
-    score: props.data.attributes.score,
-    tags: props.data.attributes.tags
+    publishedAt: props.attributes.publishedAt,
+    authors: props.attributes.authors,
+    score: props.attributes.score,
+    tags: props.attributes.tags
   }
 
   // Regions
@@ -23,8 +23,8 @@ export default function BlogPostPage(props: IBlogPost) {
     title: 'hero',
     children: (
       <Hero url={
-        props.data.attributes.cover.data ?
-        props.data.attributes.cover.data.attributes.url :
+        props.attributes.cover.data ?
+        props.attributes.cover.data.attributes.url :
         ''
         }/>
     )
@@ -35,9 +35,9 @@ export default function BlogPostPage(props: IBlogPost) {
     children: (
       <>
         <BackToPage text='Back' location='/blog'/>
-        <Title content={props.data.attributes.title}/>
+        <Title content={props.attributes.title}/>
         <MetaBlock {...metaBlockData}></MetaBlock>
-        <Body content={props.data.attributes.body}/>
+        <Body content={props.attributes.body}/>
       </>
     )
   }
